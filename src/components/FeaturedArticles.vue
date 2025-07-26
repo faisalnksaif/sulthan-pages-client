@@ -2,7 +2,7 @@
   <div>
     <v-card-title class="d-flex justify-center flex-column align-center">
       <h2 class="heading poppins-bold">Featured Articles</h2>
-      <div class="sp-underline"></div>
+      <div class="sp-underline" />
     </v-card-title>
 
     <div class="child d-sm-flex justify-center posts-wrapper">
@@ -10,6 +10,10 @@
       <Post class="post" />
       <Post class="post" />
       <Post class="post" />
+    </div>
+
+    <div class="d-flex justify-end">
+      <v-btn class="poppins-bold mr-10" href="/posts" variant="plain">See more articles</v-btn>
     </div>
   </div>
 </template>

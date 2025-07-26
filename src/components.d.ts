@@ -15,6 +15,7 @@ declare module 'vue' {
     Mission: typeof import('./components/Mission.vue')['default']
     NavBar: typeof import('./components/NavBar.vue')['default']
     Post: typeof import('./components/Post.vue')['default']
+    Quote: typeof import('./components/common/Quote.vue')['default']
     RecentPosts: typeof import('./components/RecentPosts.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

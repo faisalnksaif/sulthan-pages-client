@@ -1,18 +1,21 @@
 <template>
   <div style="height: 80vh; position: relative">
     <v-parallax scale=".5" src="/home.jpg" style="height: 80vh;">
-      <div style="background: rgba(0, 0, 0, 0.6); height: 100%">
+      <div style="background: rgba(0, 0, 0, 0.7); height: 100%">
         <div class="d-flex align-center flex-row justify-center fill-height">
           <div class="d-flex flex-column fill-height justify-center align-center text-white">
             <!-- <h1 class="text-h2 font-weight-bold mb-4 poppins-bold text-center">
               Sulthan Pages
             </h1> -->
-            <div class="logo-wrapper">
-              <img class="logo" src="/logo.png" style="width: 20em; ">
-            </div>
+            <Transition name="slide-fade">
+              <div v-if="showImage" class="logo-wrapper d-flex justify-center align-center">
+                <img class="logo" src="/logo.png">
+              </div>
+            </Transition>
+
             <div class="typewriter pl-4">
               <h3 class="subheading ">
-                "A Call to Thawheed"
+                To Allah — through the true successors of the Prophet ﷺ
               </h3>
 
             </div>
@@ -21,11 +24,11 @@
       </div>
     </v-parallax>
 
-    <div class="image">
+    <!-- <div class="image">
       <Transition name="slide-fade">
         <img v-if="showImage" src="/mahan.png">
       </Transition>
-    </div>
+    </div> -->
   </div>
 
 </template>
@@ -44,18 +47,35 @@
   color: #fff;
   font-family: monospace;
   overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid green;
+  font-size: 1em;
   /* The typwriter cursor */
-  white-space: nowrap;
   /* Keeps the content on a single line */
   margin: 0 auto;
   /* Gives that scrolling effect as the typing happens */
   letter-spacing: .1em;
   /* Adjust as needed */
-  animation:
-    typing 3.5s steps(30, end),
-    blink-caret 2s step-end infinite;
+}
+
+@media screen and (max-width: 600px) {
+  .typewriter .subheading {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .typewriter .subheading {
+    white-space: nowrap;
+    border-right: .15em solid rgba(235, 157, 13, 0.831);
+    animation:
+      typing 5s steps(50, end),
+      blink-caret 2s step-end infinite;
+  }
+}
+
+@media (max-width: 600px) {
+  .typewriter .subheading {
+    font-size: 1.3em;
+  }
 }
 
 /* The typing effect */
@@ -74,7 +94,7 @@
 
   from,
   to {
-    border-color: green
+    border-color: rgba(235, 157, 13, 0.831)
   }
 
   50% {
@@ -96,7 +116,6 @@
 
 .slide-fade-enter-from,
 .slide-fade-leave-to {
-  /* transform: translateX(200px); */
   opacity: 0;
 }
 
@@ -138,11 +157,13 @@
   }
 }
 
-.logo-wrapper {
-  /* background-color: white; */
+.logo {
+  width: 50%;
 }
 
-.logo {
-  filter: brightness(0) invert(1);
+@media (max-width: 600px) {
+  .logo {
+    width: 80%;
+  }
 }
 </style>

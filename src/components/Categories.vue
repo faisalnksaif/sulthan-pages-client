@@ -2,7 +2,7 @@
   <div>
     <v-card-title class="d-flex justify-center flex-column align-center">
       <h2 class="heading poppins-bold">Categories</h2>
-      <div class="sp-underline"></div>
+      <div class="sp-underline" />
     </v-card-title>
 
     <div class="child d-sm-flex justify-center posts-wrapper">
