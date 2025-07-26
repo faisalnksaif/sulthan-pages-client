@@ -22,7 +22,7 @@
                 <v-icon icon="fas fa-solid fa-quote-left" size="15" style="margin-top:-10px" />
                 <slot name="quote" />
                 <v-icon icon="fas fa-solid fa-quote-right" size="15" style="margin-top:-10px" />
-                <v-btn class="text-caption poppins" :href="`quote?type=${type}`" variant="plain">Read more</v-btn>
+                <v-btn class="text-caption poppins" :href="`#/quote?type=${type}`" variant="plain">Read more</v-btn>
               </span>
 
             </div>

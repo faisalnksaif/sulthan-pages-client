@@ -5,12 +5,20 @@
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
+import { createRouter, createWebHashHistory } from 'vue-router/auto'
 import { routes } from 'vue-router/auto-routes'
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  history: createWebHashHistory(),
   routes,
+  scrollBehavior (to, from, savedPosition) {
+    const isChild = to.path !== '/'
+
+    if (isChild) {
+      return { top: 0 }
+    }
+    return savedPosition || false
+  },
 })
 
 // Workaround for https://github.com/vitejs/vite/issues/11804
