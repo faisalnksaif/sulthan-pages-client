@@ -9,5 +9,12 @@
 </template>
 
 <script lang="ts" setup>
-//
+  import { onMounted } from 'vue'
+  import { usePostsStore } from '@/store/posts'
+
+  const postStore = usePostsStore()
+
+  onMounted(() => {
+    postStore.fetchPosts()
+  })
 </script>

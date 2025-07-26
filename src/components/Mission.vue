@@ -1,26 +1,22 @@
 <template>
-  <Quote author-image="./mahan.jpg" background="./home.jpg">
+  <Quote :author-image="quotes.mission.authorImage" background="./home.jpg" type="mission">
     <template #title>
-      My Mission is the Call to Tawheed
+      {{ quotes.mission.title }}
     </template>
 
     <template #quote>
-      The noble declaration <b>La ilaha illallah, Muhammadur Rasulullah</b> was the divine message upheld by
-      every
-      Prophet appointed to this world. Each one of them bore witness to this truth, and every bearer of this
-      sacred
-      message endured trials and tribulations along their path.
+      <span v-html="quotes.mission.quote" />
     </template>
 
     <template #author>
-      Quthubuzzaman Sheikh Yusuf Sulthan Shah
-      Qadiri Chishti
+      {{ quotes.mission.author }}
     </template>
   </Quote>
 
 </template>
 
 <script setup lang="ts">
+  import { quotes } from './common/quotes'
 
 </script>
 <style scoped></style>
