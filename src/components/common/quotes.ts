@@ -38,25 +38,16 @@ export const quotes = {
     `,
     authorImage: './usthad.png',
     article: `
-    Allah, the Exalted, created mankind and jinn solely to worship Him. Worship, in its true essence, is the profound manifestation of humility and submission. <br><br>
-
-    Yet, such reverence cannot be fulfilled through mere outward actions or physical gestures. To bow or prostrate with one's forehead touching the earth is not, in itself, the embodiment of true humility or modesty. No action we perform can be deemed worship unless it is executed in accordance with the sacred ordinances of Allah.<br><br>
-
-    The Almighty has instructed us to worship Him in a way that draws us near to Him, with no veils creating distance or detachment. This closeness can only be attained when the pure light of Tawheed is engraved deeply within the soul.<br><br>
-
-    Sadly, the worship we witness today - cloaked in the guise of devotion - too often strays from this divine path. Even in the noble act of du'a, among the highest forms of worship, our hearts wander. We utter "Ameen" absent-mindedly, without presence, understanding or intention, to foreign phrases recited by someone else.<br><br>
-
-    Our souls - the very place upon which Allah gazes - are devoid of His remembrance. Tawheed is absent within. How then can we claim that these du'as are worthy acts, accepted by the Most Merciful?<br><br>
-
-    Indeed, even salat the greatest form of physical worship has been reduced to hollow gestures and sounds, stripped of its soul and its power to bring us closer to Allah.<br><br>
-
-    Whether virtues or rituals, the Prophet ﷺ commanded his noble companions to perform them sincerely, by instituting the Tawheed in the souls - so that Allah would accept swiftly. The true heirs of the Prophet's legacy - the righteous saints and scholars - have called us to the same path.<br><br>
-
-    In our era, the guide of the age, Qutbuzzaman Yusuf Sulthan, urged us to sanctify every moment of our lives as true worship. It is in the sacred mission of sharing this timeless message that he granted me the mantle of Khilafah.<br><br>
-
-    Let us strive together to make the true Deen - the Deen entrusted to us by the Prophet ﷺ, his noble companions, and the virtuous like Shaykh Abdul Qadir Jeelani and Qutbuzzaman - a living reality in our lives.<br><br>
-
-    May Allah, the most Merciful, guide us to sincere worship, revive Tawheed in our hearts, and accept our efforts in His path. Ameen.<br>
+    Allah, the Exalted, created mankind and jinn solely to worship Him. Worship, in its truest essence, is the profound manifestation of humility and submission.<br><br>
+Yet, such reverence cannot be fulfilled through mere outward actions or physical gestures. To bow or prostrate with one’s forehead touching the earth is not, in itself, the embodiment of true humility or modesty. No action we perform can be deemed worship unless it is executed in accordance with the sacred ordinances of Allah.<br><br>
+The Almighty has instructed us to worship him in a way that draws us near to Him, with no veils creating distance or detachment. This closeness can only be attained when the pure light of Tawheed is engraved deeply within the soul.<br><br>
+Sadly, the worship we witness today—cloaked in the guise of devotion—too often strays from this divine path. Even in the noble act of du’a, among the highest forms of worship, our hearts wander. We utter “Ameen” absent-mindedly, without presence, understanding or intention, to foreign phrases recited by someone else.<br><br>
+Our souls—the very place upon which Allah gazes—are devoid of His remembrance. Tawheed is absent within. How then can we claim that these du’as are worthy acts, accepted by the Most Merciful?<br><br>
+Indeed, even salat—the greatest form of physical worship—has been reduced to hollow gestures and sounds, stripped of its soul and its power to bring us closer to Allah.<br><br>
+Whether virtues or rituals, the Prophet ﷺ commanded his noble companions to perform them sincerely, by instituting the Tawheed in the souls - so that Allah would accept swiftly. The true heirs of the Prophet’s legacy—the righteous saints and scholars—have called us to the same path.<br><br>
+In our era, the guide of the age, Qutb al-Zaman Yousuf Sulthan, urged us to sanctify every moment of our lives as true worship. It is in the sacred mission of sharing this timeless message that he granted me the mantle of Khilafah.<br><br>
+Let us strive together to make the true Deen—the Deen entrusted to us by the Prophet ﷺ, his noble companions, and the virtuous like Shaykh Abdul Qadir Jeelani and Qutb al-Zaman—a living reality in our lives. <br><br>
+May Allah, the most Merciful, guide us to sincere worship, revive Tawheed in our hearts, and accept our efforts in His path. Ameen.
     `,
   },
 }
