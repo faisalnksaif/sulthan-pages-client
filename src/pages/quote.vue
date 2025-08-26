@@ -13,24 +13,32 @@
       </v-parallax>
     </div>
 
-    <div class="body d-sm-flex justify-space-between align-start">
-      <div class="d-sm-flex flex-column  justify-center pa-10">
+    <div class="body d-md-flex justify-space-between align-start">
+      <!-- Left: image + quote (1/3 width) -->
+      <div
+        class="left-section d-sm-flex flex-sm-row flex-md-column justify-md-center justify-sm-space-around pa-10"
+        style="flex: 1"
+      >
         <img class="author-image" :src="(quotes as any)[type].authorImage">
 
-        <div class="quote ">
-          <v-icon icon="fas fa-solid fa-quote-left" size="15" style="margin-top:-10px" />
-          <span class="merriweather mt-5 " v-html="(quotes as any)[type].quote" />
-          <v-icon icon="fas fa-solid fa-quote-right" size="15" style="margin-top:-10px" />
+        <div class="quote d-flex justify-center align-center">
+          <div>
+            <v-icon icon="fas fa-solid fa-quote-left" size="15" style="margin-top:-10px" />
+            <span class="merriweather mt-5" v-html="(quotes as any)[type].quote" />
+            <v-icon icon="fas fa-solid fa-quote-right" size="15" style="margin-top:-10px" />
+          </div>
+
         </div>
       </div>
 
+      <!-- Right: article (2/3 width) -->
       <div
-        class="pl-10 pr-10 pt-sm-10 pb-10 merriweather body"
-        style="line-height: 33px; font-size: 1.1em"
+        class="right-section pl-10 pr-10 pt-sm-10 pb-10 merriweather body"
+        style="line-height: 33px; font-size: 1.1em; flex: 10"
         v-html="(quotes as any)[type].article"
       />
-
     </div>
+
   </div>
 </template>
 
@@ -57,9 +65,10 @@
 .quote {
   /* border: 1px solid grey; */
   background: rgb(238, 238, 238);
-  padding: 10px;
-  border-radius: 5px;
+  padding: 20px;
+  border-radius: 50px;
   line-height: 30px;
   margin-top: 10px;
+  max-width: 300px;
 }
 </style>

@@ -17,7 +17,7 @@
 <script setup lang="ts">
 
 </script>
-<style>
+<style scoped>
 .posts-wrapper {
   flex-wrap: wrap;
   gap: 16px;

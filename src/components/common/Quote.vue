@@ -10,7 +10,7 @@
 
       <div class="ma-sm-10">
         <v-card-title class="d-flex justify-center flex-column align-center">
-          <h2 class="heading poppins-bold text-center justify-center d-flex">
+          <h2 class="heading poppins-extra-bold text-center justify-center d-flex">
             <slot name="title" />
           </h2>
           <div class="sp-underline" />
@@ -22,13 +22,13 @@
                 <v-icon icon="fas fa-solid fa-quote-left" size="15" style="margin-top:-10px" />
                 <slot name="quote" />
                 <v-icon icon="fas fa-solid fa-quote-right" size="15" style="margin-top:-10px" />
-                <v-btn class="text-caption poppins" :href="`#/quote?type=${type}`" variant="plain">Read more</v-btn>
+                <v-btn class="text-caption merriweather" :href="`#/quote?type=${type}`" variant="plain">Read more</v-btn>
               </span>
 
             </div>
           </div>
         </v-card-text>
-        <div class="subheading mt-2 poppins-bold text-center">
+        <div class="subheading mt-2 merriweather-bold text-center">
           <slot name="author" />
         </div>
       </div>

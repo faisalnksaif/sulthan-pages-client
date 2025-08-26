@@ -3,7 +3,8 @@ import { ApolloClient, createHttpLink, InMemoryCache } from '@apollo/client/core
 import { setContext } from '@apollo/client/link/context'
 
 const httpLink = createHttpLink({
-  uri: 'http://165.22.209.234:3000/api/graphql',
+  uri: 'https://api.sulthanpages.com/api/graphql',
+  // uri: 'http://localhost:3000/api/graphql',
 })
 
 // Optional: auth header if needed

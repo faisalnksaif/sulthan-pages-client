@@ -2,15 +2,18 @@ import { provideApolloClient } from '@vue/apollo-composable'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import apolloClient from '@/appolo/client'
-import { GET_POSTS } from '@/appolo/graphql/queries'
+import { GET_FEATURED_POSTS } from '@/appolo/graphql/queries'
 
 export interface Post {
   id: string
   title: string
-  content: string
+  author: string
+  coverImage: {
+    url: string
+  } | null
 }
 
-export const usePostsStore = defineStore('posts', () => {
+export const useFeaturedPostsStore = defineStore('featured-posts', () => {
   const posts = ref<Post[]>([])
   const loading = ref(false)
   const error = ref<Error | null>(null)
@@ -22,7 +25,7 @@ export const usePostsStore = defineStore('posts', () => {
     try {
       const { data } = await provideApolloClient(apolloClient)(() =>
         apolloClient.query<{ posts: Post[] }>({
-          query: GET_POSTS,
+          query: GET_FEATURED_POSTS,
           variables: { take: 25, skip: 0 },
           fetchPolicy: 'network-only',
         }),

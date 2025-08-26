@@ -1,20 +1,24 @@
 <template>
-  <!-- <NavBar /> -->
+  <AppBar />
   <Home />
   <Mission />
   <VoiceOfKhalifa class="mb-12" />
   <RecentPosts class="mb-12" />
   <FeaturedArticles class="mb-12" />
-  <Categories class="mb-12" />
+  <Footer />
+  <!-- <Categories class="mb-12" /> -->
 </template>
 
 <script lang="ts" setup>
   import { onMounted } from 'vue'
-  import { usePostsStore } from '@/store/posts'
+  import { useFeaturedPostsStore } from '@/store/featured-posts'
+  import { useRecentPostsStore } from '@/store/recent-posts'
 
-  const postStore = usePostsStore()
+  const recentPostStore = useRecentPostsStore()
+  const featuredPostStore = useFeaturedPostsStore()
 
   onMounted(() => {
-    postStore.fetchPosts()
+    recentPostStore.fetchPosts()
+    featuredPostStore.fetchPosts()
   })
 </script>

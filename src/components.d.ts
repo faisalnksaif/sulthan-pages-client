@@ -8,12 +8,15 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    AppBar: typeof import('./components/AppBar.vue')['default']
     Categories: typeof import('./components/Categories.vue')['default']
+    copy: typeof import('./components/Mission copy.vue')['default']
+    DocumentRenderer: typeof import('./components/DocumentRenderer.vue')['default']
     FeaturedArticles: typeof import('./components/FeaturedArticles.vue')['default']
+    Footer: typeof import('./components/Footer.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Home: typeof import('./components/Home.vue')['default']
     Mission: typeof import('./components/Mission.vue')['default']
-    NavBar: typeof import('./components/NavBar.vue')['default']
     Post: typeof import('./components/Post.vue')['default']
     Quote: typeof import('./components/common/Quote.vue')['default']
     RecentPosts: typeof import('./components/RecentPosts.vue')['default']

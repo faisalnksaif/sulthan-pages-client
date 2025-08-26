@@ -10,11 +10,13 @@
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
     "lint": "eslint . --fix",
-    "deploy": "gh-pages -d dist"
+    "predeploy": "npm run build && echo 'sulthanpages.com' > dist/CNAME",
+    "deploy": "npm run predeploy && gh-pages -d dist"
   },
   "dependencies": {
     "@apollo/client": "^3.13.8",
     "@fontsource/roboto": "5.2.6",
+    "@keystone-6/document-renderer": "^1.1.2",
     "@mdi/font": "7.4.47",
     "@vue/apollo-composable": "^4.2.2",
     "graphql": "^16.11.0",

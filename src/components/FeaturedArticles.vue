@@ -5,35 +5,32 @@
       <div class="sp-underline" />
     </v-card-title>
 
-    <div class="child d-sm-flex justify-center posts-wrapper">
-      <Post class="post" />
-      <Post class="post" />
-      <Post class="post" />
-      <Post class="post" />
-    </div>
-
-    <div class="d-flex justify-end">
-      <v-btn class="poppins-bold mr-10" href="/posts" variant="plain">See more articles</v-btn>
+    <div>
+      <v-sheet>
+        <v-slide-group :show-arrows="mobile ? false : 'always'">
+          <v-slide-group-item v-for="post in featuredPostsStore.posts" :key="post.id">
+            <div class="ma-2 d-flex">
+              <Post
+                :id="post.id"
+                :key="post.id"
+                :author="post.author"
+                :image="post.coverImage?.url || undefined"
+                style="max-width: 400px;"
+                :title="post.title"
+              />
+            </div>
+          </v-slide-group-item>
+        </v-slide-group>
+      </v-sheet>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+  import { useDisplay } from 'vuetify'
+  import { useFeaturedPostsStore } from '@/store/featured-posts'
 
+  const { mobile } = useDisplay()
+
+  const featuredPostsStore = useFeaturedPostsStore()
 </script>
-<style>
-.posts-wrapper {
-  flex-wrap: wrap;
-  gap: 16px;
-  /* spacing between items */
-  /* justify-content: center; */
-}
-
-.post {
-  flex: 0 0 calc(25% - 12px);
-  /* 4 per row with small gap */
-  padding: 20px;
-  text-align: center;
-  border-radius: 8px;
-}
-</style>
