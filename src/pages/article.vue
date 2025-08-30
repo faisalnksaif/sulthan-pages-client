@@ -1,4 +1,10 @@
 <template>
+  <AppBar />
+  <div v-if="!post?.title" class="">
+    <!-- Skeleton for image -->
+    <v-skeleton-loader class="mb-5" style="height: 500px" type="card" />
+  </div>
+
   <div>
     <div style="height: 60vh; position: relative">
       <v-parallax scale=".1" :src="`${post?.coverImage?.url}`" style="height: 60vh;">
@@ -27,6 +33,8 @@
       </div>
     </div>
   </div>
+
+  <Footer />
 </template>
 
 <script lang="ts" setup>
@@ -47,22 +55,6 @@
 </script>
 
 <style scoped>
-.body {
-  background: #f7f7f7;
-}
-
-@media screen and (min-width: 1000px) {
-  .body {
-    padding-left: 15% !important;
-    padding-right: 15% !important;
-  }
-
-  .author-img{
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
-}
-
 @media screen and (max-width: 600px) {
   .author-img {
     width: 500px !important;

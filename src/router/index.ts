@@ -14,6 +14,13 @@ const router = createRouter({
   scrollBehavior (to, from, savedPosition) {
     const isChild = to.path !== '/'
 
+    if (to.hash) {
+      return {
+        el: to.hash,
+        behavior: 'smooth',
+      }
+    }
+
     if (isChild) {
       return { top: 0 }
     }

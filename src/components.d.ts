@@ -10,7 +10,7 @@ declare module 'vue' {
   export interface GlobalComponents {
     AppBar: typeof import('./components/AppBar.vue')['default']
     Categories: typeof import('./components/Categories.vue')['default']
-    copy: typeof import('./components/Mission copy.vue')['default']
+    ContactUs: typeof import('./components/ContactUs.vue')['default']
     DocumentRenderer: typeof import('./components/DocumentRenderer.vue')['default']
     FeaturedArticles: typeof import('./components/FeaturedArticles.vue')['default']
     Footer: typeof import('./components/Footer.vue')['default']

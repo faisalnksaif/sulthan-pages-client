@@ -76,6 +76,38 @@ body {
   font-variation-settings: 'wdth' 100;
 }
 
-.v-main{
+.v-main {
   padding-top: 0 !important;
+}
+
+@media screen and (min-width: 1000px) {
+  .body {
+    padding-left: 15% !important;
+    padding-right: 15% !important;
+  }
+
+  .author-img {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.body {
+  background: #f7f7f7;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.text-wrap {
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+
+.v-skeleton-loader__card{
+  height: 100% !important;
+}
+
+.v-skeleton-loader__image{
+  height: 88% !important;
 }

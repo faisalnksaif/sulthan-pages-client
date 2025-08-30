@@ -4,7 +4,8 @@
   <Mission />
   <VoiceOfKhalifa class="mb-12" />
   <RecentPosts class="mb-12" />
-  <FeaturedArticles class="mb-12" />
+  <FeaturedArticles />
+  <ContactUs />
   <Footer />
   <!-- <Categories class="mb-12" /> -->
 </template>

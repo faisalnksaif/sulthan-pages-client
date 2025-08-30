@@ -1,19 +1,20 @@
 <template>
+  <AppBar />
   <div>
     <div style="height: 60vh; position: relative">
       <v-parallax scale=".5" src="/home.jpg" style="height: 60vh;">
         <div style="background: rgba(0, 0, 0, 0.7); height: 100%">
           <div class="d-flex align-center flex-row justify-center fill-height">
             <div class="d-flex flex-column fill-height justify-center align-center text-white pa-10">
-              <div class="poppins-bold text-h4">{{ (quotes as any)[type].title }}</div>
-              <div class="poppins-bold mt-2" v-html="(quotes as any)[type].author" />
+              <div class="poppins-extra-bold text-h4 text-center">{{ (quotes as any)[type].title }}</div>
+              <div class="poppins-bold mt-2 text-center" v-html="(quotes as any)[type].author" />
             </div>
           </div>
         </div>
       </v-parallax>
     </div>
 
-    <div class="body d-md-flex justify-space-between align-start">
+    <div class="body-1 d-md-flex justify-space-between align-start">
       <!-- Left: image + quote (1/3 width) -->
       <div
         class="left-section d-sm-flex flex-sm-row flex-md-column justify-md-center justify-sm-space-around pa-10"
@@ -33,7 +34,7 @@
 
       <!-- Right: article (2/3 width) -->
       <div
-        class="right-section pl-10 pr-10 pt-sm-10 pb-10 merriweather body"
+        class="right-section pl-10 pr-10 pt-sm-10 pb-10 merriweather "
         style="line-height: 33px; font-size: 1.1em; flex: 10"
         v-html="(quotes as any)[type].article"
       />
@@ -51,7 +52,7 @@
 
 </script>
 <style scoped>
-.body {
+.body-1 {
   background: #f7f7f7;
 }
 
