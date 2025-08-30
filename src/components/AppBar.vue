@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="appbar">
     <v-app-bar color="rgb(0, 0, 0, .6)" scroll-behavior="fully-hide inverted">
       <v-app-bar-title>
         <img class="logo" src="/logo.png">
@@ -46,24 +46,20 @@
 
   const drawer = ref(false)
 </script>
-<style scoped>
-.logo {
+<style>
+.appbar .logo {
   width: 100px;
 }
 
-.v-btn {
+.appbar  .v-btn {
   color: white !important;
 }
 
-.v-btn--active .v-btn__overlay {
+.appbar  .v-btn--active .v-btn__overlay {
   background: transparent !important;
   /* remove tonal bg */
   color: white !important;
   /* keep text white */
 }
 
-.list .v-btn{
-  margin-top:10px;
-  color: white !important;
-}
 </style>

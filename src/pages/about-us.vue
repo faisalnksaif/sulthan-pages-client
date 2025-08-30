@@ -2,7 +2,7 @@
   <AppBar />
   <div style="height: 60vh; position: relative">
     <v-parallax scale=".5" src="/about.jpg" style="height: 60vh;">
-      <div style="background: rgba(0, 0, 0, 0.7); height: 100%" />
+      <div style="background: rgba(0, 0, 0, 0.5); height: 100%" />
     </v-parallax>
   </div>
   <div class="body pb-10">
