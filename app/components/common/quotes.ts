@@ -9,7 +9,7 @@ export const quotes = {
       message endured trials and tribulations along their path.
     `,
     author: 'Quthubuzzaman Sheikh Yusuf Sulthan Shah Qadiri Chishti',
-    authorImage: './mahan.jpg',
+    authorImage: '/mahan.jpg',
     background: './home.jpg',
     article: `
     The core of my mission is the invitation to Tawheed — the oneness of Allah and the affirmation that Prophet Muhammed is His Messenger. The noble declaration "Lā ilāha illallāh, Muhammadur Rasūlullāh" was the divine message upheld by every Prophet appointed to this world. Each one of them bore witness to this truth, and every bearer of this sacred message endured trials and tribulations along their path.<br> <br>
@@ -36,7 +36,7 @@ export const quotes = {
     Sheikh Abbas Faizy Vazhikkadav<br>
     Khalifa of Quthubuzzaman
     `,
-    authorImage: './usthad.png',
+    authorImage: '/usthad.png',
     article: `
     Allah, the Exalted, created mankind and jinn solely to worship Him. Worship, in its truest essence, is the profound manifestation of humility and submission.<br><br>
 Yet, such reverence cannot be fulfilled through mere outward actions or physical gestures. To bow or prostrate with one’s forehead touching the earth is not, in itself, the embodiment of true humility or modesty. No action we perform can be deemed worship unless it is executed in accordance with the sacred ordinances of Allah.<br><br>
