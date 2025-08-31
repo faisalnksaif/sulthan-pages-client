@@ -16,6 +16,7 @@ import { useRecentPostsStore } from '~/stores/recent-posts'
 const recentPostStore = useRecentPostsStore()
 const featuredPostStore = useFeaturedPostsStore()
 
+
 useHead({
   title: 'Sulthan Pages - Sheikh Yusuf Sulthan Shah Qadiri Chishty',
   meta: [
@@ -30,10 +31,24 @@ useHead({
     { property: 'og:title', content: 'Sulthan Pages' },
     { property: 'og:description', content: 'Learn about Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics.' },
   ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Sulthan Pages",
+        "url": "https://yourwebsite.com"
+      })
+    }
+  ]
 })
 
-onMounted(() => {
-  recentPostStore.fetchPosts()
+await useAsyncData('featured-posts', () =>
   featuredPostStore.fetchPosts()
+)
+
+onMounted(async () => {
+  recentPostStore.fetchPosts()
 })
 </script>

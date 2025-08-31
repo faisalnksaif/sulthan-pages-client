@@ -33,5 +33,9 @@ export default defineNuxtConfig({
         '/quote',
       ]
     }
-  }
+  },
+  site: {
+    url: 'https://sulthanpages.com/',
+    name: 'Sulthan Pages'
+  },
 })
