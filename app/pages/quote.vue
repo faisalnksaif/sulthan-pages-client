@@ -44,7 +44,7 @@ import { quotes } from '@/components/common/quotes'
 const route = useRoute()
 const type = (route.query.type as string)
 
-console.log(type)
+console.log({ type })
 
 const quoteItem = (quotes as any)[type]
 
