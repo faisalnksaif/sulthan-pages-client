@@ -38,23 +38,26 @@
 </template>
 
 <script lang="ts" setup>
-import { useRoute } from 'vue-router'
 import { quotes } from '@/components/common/quotes'
 
-const route = useRoute()
-const type = (route.query.type as string)
+const props = defineProps({
+  type: {
+    type: String,
+    required: true,
+    validator: (value: string) => ['mission', 'voiceOfKhalifa'].includes(value)
+  },
+})
 
-console.log({ type })
-
-const quoteItem = (quotes as any)[type]
+const quoteItem = (quotes as any)[props.type]
+console.log(props.type)
 
 useHead({
-  title: quoteItem?.title || 'Article',
+  title: quoteItem.title,
   meta: [
-    { name: 'description', content: quoteItem?.quote || '' },
-    { property: 'og:title', content: quoteItem?.title },
-    { property: 'og:description', content: quoteItem?.quote },
-    { property: 'og:image', content: quoteItem?.authorImage },
+    { name: 'description', content: quoteItem.quote || '' },
+    { property: 'og:title', content: quoteItem.title },
+    { property: 'og:description', content: quoteItem.quote },
+    { property: 'og:image', content: quoteItem.authorImage },
   ],
 })
 

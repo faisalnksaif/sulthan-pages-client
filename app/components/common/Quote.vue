@@ -21,7 +21,7 @@
                 <slot name="quote" class="merriweather" />
                 <v-icon icon="mdi-format-quote-close" size="20" style="margin-top:-10px" />
                 <div :class="`text-${authorImagePosition === 'left' ? 'right' : 'left'}`">
-                  <v-btn class="text-caption poppins mt-2" color="brown" :href="`/quote?type=${type}`" variant="tonal">Read
+                  <v-btn class="text-caption poppins mt-2" color="brown" :href="`/quote/${type}`" variant="tonal">Read
                     more</v-btn>
                 </div>
               </span>

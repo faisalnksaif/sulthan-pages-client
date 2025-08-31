@@ -28,10 +28,9 @@ export default defineNuxtConfig({
         '/',
         '/about-us',
         '/our-guides',
+        '/quote/mission',
+        '/quote/voiceOfKhalifa',
       ],
-      ignore: [
-        '/quote',
-      ]
     }
   },
   site: {
