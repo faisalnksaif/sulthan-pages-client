@@ -1,6 +1,6 @@
 <template>
   <div style="height: 80vh; position: relative">
-    <v-parallax scale=".9" src="/guide.jpg" style="height: 80vh; background: white !important">
+    <v-parallax scale=".9" src="/guide.jpeg" style="height: 80vh; background: white !important">
       <div style="background: rgba(0, 0, 0, 0.3); height: 100%" />
     </v-parallax>
   </div>
