@@ -13,6 +13,7 @@
         <div class="d-none d-sm-flex">
           <v-btn class="text-none poppins" color="white" :to="'/'" variant="text">Home</v-btn>
           <v-btn class="text-none poppins" color="white" :href="'/our-guides'" variant="text">Our Guides</v-btn>
+          <v-btn class="text-none poppins" color="white" :href="'/articles'" variant="text">Articles</v-btn>
           <v-btn class="text-none poppins" color="white" :href="'/about-us'" variant="text">About Us</v-btn>
           <!-- <v-btn class="text-none poppins" color="white" variant="text">Categories</v-btn> -->
           <v-btn class="text-none poppins" color="white" :to="'/#contact-us'" variant="text">Contact</v-btn>
@@ -21,19 +22,14 @@
       </template></v-app-bar>
 
     <!-- Mobile Navigation Drawer -->
-    <v-navigation-drawer
-      v-model="drawer"
-      class="d-sm-none"
-      color="rgb(0, 0, 0, .8)"
-      location="right"
-      temporary
-    >
-      <v-list class="d-flex flex-column list">
-        <v-btn class="text-none poppins" color="white" :to="'/'" variant="plain">Home</v-btn>
-        <v-btn class="text-none poppins" color="white" :href="'/our-guides'" variant="plain">Our Guides</v-btn>
-        <v-btn class="text-none poppins" color="white" :href="'/about-us'" variant="plain">About Us</v-btn>
+    <v-navigation-drawer v-model="drawer" class="d-sm-none" color="rgb(0, 0, 0, .8)" location="right" temporary>
+      <v-list class="d-flex flex-column list text-left justify-start align-start">
+        <v-btn class="text-none poppins mb-2" color="white" :to="'/'" variant="plain">Home</v-btn>
+        <v-btn class="text-none poppins mb-2" color="white" :href="'/our-guides'" variant="plain">Our Guides</v-btn>
+        <v-btn class="text-none poppins mb-2" color="white" :href="'/articles'" variant="text">Articles</v-btn>
+        <v-btn class="text-none poppins mb-2" color="white" :href="'/about-us'" variant="plain">About Us</v-btn>
         <!-- <v-btn class="text-none poppins" color="white" variant="text">Categories</v-btn> -->
-        <v-btn class="text-none poppins" color="white" :to="'/#contact-us'" variant="plain">Contact</v-btn>
+        <v-btn class="text-none poppins mb-2" color="white" :to="'/#contact-us'" variant="plain">Contact</v-btn>
       </v-list>
     </v-navigation-drawer>
 
@@ -42,24 +38,23 @@
 </template>
 
 <script setup lang="ts">
-  import { ref } from 'vue'
+import { ref } from 'vue'
 
-  const drawer = ref(false)
+const drawer = ref(false)
 </script>
 <style>
 .appbar .logo {
   width: 100px;
 }
 
-.appbar  .v-btn {
+.appbar .v-btn {
   color: white !important;
 }
 
-.appbar  .v-btn--active .v-btn__overlay {
+.appbar .v-btn--active .v-btn__overlay {
   background: transparent !important;
   /* remove tonal bg */
   color: white !important;
   /* keep text white */
 }
-
 </style>

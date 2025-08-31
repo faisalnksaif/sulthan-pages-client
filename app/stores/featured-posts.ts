@@ -26,7 +26,7 @@ export const useFeaturedPostsStore = defineStore('featured-posts', () => {
       const { data } = await provideApolloClient(apolloClient)(() =>
         apolloClient.query<{ posts: Post[] }>({
           query: GET_FEATURED_POSTS,
-          variables: { take: 25, skip: 0 },
+          variables: { take: 10, skip: 0 },
           fetchPolicy: 'network-only',
         }),
       )

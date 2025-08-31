@@ -2,9 +2,9 @@ import { provideApolloClient } from '@vue/apollo-composable'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import apolloClient from '@/appolo/client'
-import { GET_RECENT_POSTS } from '@/appolo/graphql/queries'
+import { GET_POSTS } from '@/appolo/graphql/queries'
 
-export interface Post {
+export interface Article {
   id: string
   title: string
   author: string
@@ -13,25 +13,29 @@ export interface Post {
   } | null
 }
 
-export const useRecentPostsStore = defineStore('recent-posts', () => {
-  const posts = ref<Post[]>([])
+const PAGE_SIZE = 25
+
+export const usArticlesStore = defineStore('articles', () => {
+  const posts = ref<Article[]>([])
+  const postsCount = ref(-1)
   const loading = ref(false)
   const error = ref<Error | null>(null)
 
-  async function fetchPosts () {
+  async function fetchPosts(page: number) {
     loading.value = true
     error.value = null
 
     try {
       const { data } = await provideApolloClient(apolloClient)(() =>
-        apolloClient.query<{ posts: Post[] }>({
-          query: GET_RECENT_POSTS,
-          variables: { take: 10, skip: 0 },
+        apolloClient.query<{ posts: Article[], postsCount: number }>({
+          query: GET_POSTS,
+          variables: { take: PAGE_SIZE, skip: (page - 1) * PAGE_SIZE },
           fetchPolicy: 'network-only',
         }),
       )
 
-      posts.value = data.posts
+      postsCount.value = data.postsCount
+      posts.value.push(...data.posts)
     } catch (error_: any) {
       error.value = error_
     } finally {
@@ -40,6 +44,7 @@ export const useRecentPostsStore = defineStore('recent-posts', () => {
   }
 
   return {
+    postsCount,
     posts,
     loading,
     error,
