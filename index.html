@@ -1,213 +1,371 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <link rel="preload" as="font" type="font/eot" href="/assets/materialdesignicons-webfont-CSr8KVlo.eot" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/materialdesignicons-webfont-Dp5v-WZN.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/materialdesignicons-webfont-PXm3-2wK.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/ttf" href="/assets/materialdesignicons-webfont-B7mPwVP_.ttf" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-100-normal-BQXKmI1c.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-100-normal-DDeB9qQX.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-100-normal-eVx91DwW.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-100-normal-DesmuRQJ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-100-normal-DCm82-f1.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-100-normal-B-PMwc8r.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-100-normal-1LaByAVy.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-100-normal-DlpfXJCk.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-100-italic-BwNgNp6i.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-100-italic-BA5X659X.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-100-italic-BtiJ2JPA.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-100-italic-DlbPbIMY.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-100-italic-_EjYahLi.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-100-italic-DTJxdrCC.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-100-italic-UmkpCK7L.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-300-normal-CUPJdUZp.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-300-normal-BoeCr7ev.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-300-normal-Cnub06j7.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-100-italic-DVDJQTC2.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-300-italic-BDayftIC.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-300-normal-BMxwzQmU.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-300-normal-CNeuLW5X.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-300-normal-BtHl5mYl.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-300-italic-BrLe5cRO.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-300-normal-CztWkFGs.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-300-italic-Cjr2DTl9.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-300-italic-hkG7WCB1.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-300-italic-BhjtUEy1.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-300-italic-Decoa7JJ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-300-italic-BBeuuFIU.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-300-italic-PQBE51_Y.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-400-normal-DzMWdK87.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-400-normal-jFM2czAU.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-400-normal-DAIM1_dR.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-400-italic-Cx5WlvFD.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-400-normal-B3wgz80t.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-400-normal-fF1SLJBj.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-400-normal-CDDxGrUb.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-400-normal-ZYmyxeOy.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-400-normal-CNwBRw8h.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-400-italic-B34zyaoR.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-400-italic-DYUv4wPJ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-400-italic-DybfvQDZ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-400-italic-D5oo1_lk.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-400-italic-CwcIpTAp.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-400-italic-CsSFmaQ2.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-500-normal-hCeO1jFL.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-400-italic-CdnZD53w.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-500-normal-BJMS0heP.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-500-normal-B7rQpwPu.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-500-normal-HYpufUYk.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-500-normal-CFNaIMFC.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-500-normal-BXFTxrNR.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-500-normal-C_ARlJGk.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-500-italic-50KKclkj.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-500-normal-CkrA1NAy.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-500-italic-CqwlXMhV.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-500-italic-COCmbgXF.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-500-italic-PPSXoPA-.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-500-italic-D10Z6vdt.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-500-italic-C5PK0hBL.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-700-normal-CzEIZVQR.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-700-normal-D_fA0fHY.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-700-normal-DpKAje7q.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-500-italic-CXbgGduZ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-700-normal-BFWtvCOj.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-700-normal-DKkQdRpM.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-700-normal-xbpggnJp.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-700-normal-BNPgmEQS.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-700-normal-DZr4b_KL.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-700-italic-DedP4OHz.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-700-italic-B44dforp.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-700-italic-Czf1LPn6.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-700-italic-CVTPEFZc.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-700-italic--HkwXge-.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-900-normal-D4rFC7QP.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-700-italic-D8Nn7Ig5.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-700-italic-CtSdk0h_.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-700-italic-RumOU1n5.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-900-normal-D60pXI5H.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-900-normal-DVW2yWT0.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-900-normal-Bfn4Lcxa.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-900-normal-BxNYdyfz.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-900-normal-BCuSXpbA.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-900-normal-93zEKV3C.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-ext-900-italic-jbY8C0RQ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-900-italic-Mo1b0y_W.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-900-italic-DAJdubQV.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-greek-900-italic-BEtBOMSg.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-900-italic-CSWCVjBl.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-vietnamese-900-italic-Bgqc_BA8.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-symbols-900-normal-CRdpsJ80.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-900-italic-45TalvtQ.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-latin-ext-300-normal-BOz0oSmX.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-math-500-italic-BvGZdN4I.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff2" href="/assets/roboto-cyrillic-900-italic-Bk0kO4dp.woff2" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-100-normal-CiRHeoKM.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-100-normal-BugLp6Ss.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-100-normal-BYYVzI3C.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-100-normal-Dt2kQgXZ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-100-normal-CZkTm67L.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-100-normal-DWeMaoIY.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-100-normal-DLDB2RRU.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-100-italic-BapsHlaH.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-100-italic-D6TIgFne.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-100-normal-yik7JM_q.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-100-italic-Dvb7TOLR.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-100-italic-DTCVS85U.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-100-italic-D2t8ABFX.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-100-italic-jdFNWNly.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-100-italic-B0eYGNxg.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-300-normal-D2-2MTar.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-300-normal-BMtCIBFp.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-300-normal-Cb01H779.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-100-italic-CL64Iygi.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-300-italic-YABmwecQ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-300-normal-CBwYb71Q.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-300-normal-9fozW1Ii.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-300-normal-zmF1mPr_.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-300-italic-B9SF4Zu4.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-300-italic-BCvgVhnV.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-300-italic-D9zNbDnZ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-300-normal--FIRE8Jd.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-300-italic-ECLaH4K2.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-300-italic-CNa0ScbZ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-300-italic-CJdRNpOg.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-400-normal-DwVopRQH.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-300-italic-4rsgw662.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-400-normal-5IDvadIC.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-400-normal-C5q4FMUG.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-400-normal-BRMeFL5Z.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-400-italic-kn7ulWJ2.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-400-normal-B2LMqLB2.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-400-normal-BYP5tVVv.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-400-normal-BG57dRWO.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-400-italic-BOU3vjAb.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-400-normal-BX2H0A0_.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-400-italic-CSG9B-dQ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-400-italic-BGnoHqbn.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-400-italic-m7NTvcpe.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-400-italic-BVgcGto5.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-400-italic-CSjfLzBJ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-400-italic-KYLIW3d7.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-500-normal-aAFKCR76.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-500-normal-B0wzjI_J.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-500-normal-CUzdRVXb.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-500-normal-DhPqGoNQ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-500-normal-nGmytUgK.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-500-italic-N_pCZQ5H.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-500-normal-B3xPS0M7.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-500-normal-CoDN7ZW2.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-500-italic-D_i8Pzih.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-500-italic-Cq00dppJ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-500-normal-EUd9mLnZ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-500-italic-DU7Rz3yF.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-500-italic-C94sVCUD.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-700-normal-BmXeMSnZ.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-500-italic-DD18EDCO.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-700-normal-DXrPs8of.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-500-italic-wp8o3pHv.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-700-normal-7YosmkaU.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-700-normal-D_8z4JZ9.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-700-normal-y_8Eg3F3.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-700-normal-DGcaX69F.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-700-normal-yuY-ZMbs.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-700-normal-D74k8Kh_.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-700-italic-BwP8z9ne.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-700-italic-C6jVqr8B.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-700-italic-AfghVahv.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-700-italic-DRRWdK1e.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-700-italic-Bkvsxy8R.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-900-normal-M6LHKKZi.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-700-italic-BbJfuXCD.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-700-italic-D4G8Wdxh.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-700-italic-CRs1IiEd.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-900-normal-JmgrehrB.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-900-normal-Bse64gO2.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-900-normal-Awt4eUGS.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-900-normal-miBG-_G3.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-900-normal-ntW-VpC0.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-900-normal-yeV1tgUt.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-900-italic-BCVsNfFa.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-greek-900-italic-BcDUfVZm.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-900-italic-DVZolrSc.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-ext-900-italic-C0yG7RJk.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-900-italic-CLagvnnl.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-symbols-900-normal-CVY_2yS0.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-900-italic-Dbdhcd8f.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-vietnamese-900-italic-tCYE3rpC.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-math-500-italic-BPY3J8n6.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-latin-ext-300-normal-9Myisv2Z.woff" crossorigin="anonymous">
-    <link rel="preload" as="font" type="font/woff" href="/assets/roboto-cyrillic-900-italic-CN_ZfVBA.woff" crossorigin="anonymous">
-
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sulthan Pages</title>
-    <script type="module" crossorigin src="/assets/index-BYJXTlN9.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-CuuZG8Ua.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
-</html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Sulthan Pages - Sheikh Yusuf Sulthan Shah Qadiri Chishty</title><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"><style id="vuetify-theme-stylesheet">:root {
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--light {
+      color-scheme: normal;
+      --v-theme-background: 255,255,255;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 255,255,255;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 255,255,255;
+      --v-theme-surface-bright-overlay-multiplier: 1;
+      --v-theme-surface-light: 238,238,238;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 66,66,66;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 238,238,238;
+      --v-theme-primary: 24,103,192;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 31,85,146;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 72,169,166;
+      --v-theme-secondary-overlay-multiplier: 1;
+      --v-theme-secondary-darken-1: 1,135,134;
+      --v-theme-secondary-darken-1-overlay-multiplier: 1;
+      --v-theme-error: 176,0,32;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 1;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 1;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 1;
+      --v-theme-on-background: 0,0,0;
+      --v-theme-on-surface: 0,0,0;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 0,0,0;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 0, 0, 0;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 0.87;
+      --v-medium-emphasis-opacity: 0.6;
+      --v-disabled-opacity: 0.38;
+      --v-idle-opacity: 0.04;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.12;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 238, 238, 238;
+      --v-theme-on-kbd: 0, 0, 0;
+      --v-theme-code: 245, 245, 245;
+      --v-theme-on-code: 0, 0, 0;
+    }
+    .v-theme--dark {
+      color-scheme: dark;
+      --v-theme-background: 18,18,18;
+      --v-theme-background-overlay-multiplier: 1;
+      --v-theme-surface: 33,33,33;
+      --v-theme-surface-overlay-multiplier: 1;
+      --v-theme-surface-bright: 204,191,214;
+      --v-theme-surface-bright-overlay-multiplier: 2;
+      --v-theme-surface-light: 66,66,66;
+      --v-theme-surface-light-overlay-multiplier: 1;
+      --v-theme-surface-variant: 200,200,200;
+      --v-theme-surface-variant-overlay-multiplier: 2;
+      --v-theme-on-surface-variant: 0,0,0;
+      --v-theme-primary: 33,150,243;
+      --v-theme-primary-overlay-multiplier: 2;
+      --v-theme-primary-darken-1: 39,124,193;
+      --v-theme-primary-darken-1-overlay-multiplier: 2;
+      --v-theme-secondary: 84,182,178;
+      --v-theme-secondary-overlay-multiplier: 2;
+      --v-theme-secondary-darken-1: 72,169,166;
+      --v-theme-secondary-darken-1-overlay-multiplier: 2;
+      --v-theme-error: 207,102,121;
+      --v-theme-error-overlay-multiplier: 2;
+      --v-theme-info: 33,150,243;
+      --v-theme-info-overlay-multiplier: 2;
+      --v-theme-success: 76,175,80;
+      --v-theme-success-overlay-multiplier: 2;
+      --v-theme-warning: 251,140,0;
+      --v-theme-warning-overlay-multiplier: 2;
+      --v-theme-on-background: 255,255,255;
+      --v-theme-on-surface: 255,255,255;
+      --v-theme-on-surface-bright: 0,0,0;
+      --v-theme-on-surface-light: 255,255,255;
+      --v-theme-on-primary: 255,255,255;
+      --v-theme-on-primary-darken-1: 255,255,255;
+      --v-theme-on-secondary: 255,255,255;
+      --v-theme-on-secondary-darken-1: 255,255,255;
+      --v-theme-on-error: 255,255,255;
+      --v-theme-on-info: 255,255,255;
+      --v-theme-on-success: 255,255,255;
+      --v-theme-on-warning: 255,255,255;
+      --v-border-color: 255, 255, 255;
+      --v-border-opacity: 0.12;
+      --v-high-emphasis-opacity: 1;
+      --v-medium-emphasis-opacity: 0.7;
+      --v-disabled-opacity: 0.5;
+      --v-idle-opacity: 0.1;
+      --v-hover-opacity: 0.04;
+      --v-focus-opacity: 0.12;
+      --v-selected-opacity: 0.08;
+      --v-activated-opacity: 0.12;
+      --v-pressed-opacity: 0.16;
+      --v-dragged-opacity: 0.08;
+      --v-theme-kbd: 66, 66, 66;
+      --v-theme-on-kbd: 255, 255, 255;
+      --v-theme-code: 52, 52, 52;
+      --v-theme-on-code: 204, 204, 204;
+    }
+    .bg-background {
+      --v-theme-overlay-multiplier: var(--v-theme-background-overlay-multiplier);
+      background-color: rgb(var(--v-theme-background)) !important;
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .bg-surface {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface)) !important;
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .bg-surface-bright {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-bright-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-bright)) !important;
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .bg-surface-light {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-light-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-light)) !important;
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .bg-surface-variant {
+      --v-theme-overlay-multiplier: var(--v-theme-surface-variant-overlay-multiplier);
+      background-color: rgb(var(--v-theme-surface-variant)) !important;
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .bg-primary {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary)) !important;
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .bg-primary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-primary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-primary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .bg-secondary {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary)) !important;
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .bg-secondary-darken-1 {
+      --v-theme-overlay-multiplier: var(--v-theme-secondary-darken-1-overlay-multiplier);
+      background-color: rgb(var(--v-theme-secondary-darken-1)) !important;
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .bg-error {
+      --v-theme-overlay-multiplier: var(--v-theme-error-overlay-multiplier);
+      background-color: rgb(var(--v-theme-error)) !important;
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .bg-info {
+      --v-theme-overlay-multiplier: var(--v-theme-info-overlay-multiplier);
+      background-color: rgb(var(--v-theme-info)) !important;
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .bg-success {
+      --v-theme-overlay-multiplier: var(--v-theme-success-overlay-multiplier);
+      background-color: rgb(var(--v-theme-success)) !important;
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .bg-warning {
+      --v-theme-overlay-multiplier: var(--v-theme-warning-overlay-multiplier);
+      background-color: rgb(var(--v-theme-warning)) !important;
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+    .text-background {
+      color: rgb(var(--v-theme-background)) !important;
+    }
+    .border-background {
+      --v-border-color: var(--v-theme-background);
+    }
+    .text-surface {
+      color: rgb(var(--v-theme-surface)) !important;
+    }
+    .border-surface {
+      --v-border-color: var(--v-theme-surface);
+    }
+    .text-surface-bright {
+      color: rgb(var(--v-theme-surface-bright)) !important;
+    }
+    .border-surface-bright {
+      --v-border-color: var(--v-theme-surface-bright);
+    }
+    .text-surface-light {
+      color: rgb(var(--v-theme-surface-light)) !important;
+    }
+    .border-surface-light {
+      --v-border-color: var(--v-theme-surface-light);
+    }
+    .text-surface-variant {
+      color: rgb(var(--v-theme-surface-variant)) !important;
+    }
+    .border-surface-variant {
+      --v-border-color: var(--v-theme-surface-variant);
+    }
+    .on-surface-variant {
+      color: rgb(var(--v-theme-on-surface-variant)) !important;
+    }
+    .text-primary {
+      color: rgb(var(--v-theme-primary)) !important;
+    }
+    .border-primary {
+      --v-border-color: var(--v-theme-primary);
+    }
+    .text-primary-darken-1 {
+      color: rgb(var(--v-theme-primary-darken-1)) !important;
+    }
+    .border-primary-darken-1 {
+      --v-border-color: var(--v-theme-primary-darken-1);
+    }
+    .text-secondary {
+      color: rgb(var(--v-theme-secondary)) !important;
+    }
+    .border-secondary {
+      --v-border-color: var(--v-theme-secondary);
+    }
+    .text-secondary-darken-1 {
+      color: rgb(var(--v-theme-secondary-darken-1)) !important;
+    }
+    .border-secondary-darken-1 {
+      --v-border-color: var(--v-theme-secondary-darken-1);
+    }
+    .text-error {
+      color: rgb(var(--v-theme-error)) !important;
+    }
+    .border-error {
+      --v-border-color: var(--v-theme-error);
+    }
+    .text-info {
+      color: rgb(var(--v-theme-info)) !important;
+    }
+    .border-info {
+      --v-border-color: var(--v-theme-info);
+    }
+    .text-success {
+      color: rgb(var(--v-theme-success)) !important;
+    }
+    .border-success {
+      --v-border-color: var(--v-theme-success);
+    }
+    .text-warning {
+      color: rgb(var(--v-theme-warning)) !important;
+    }
+    .border-warning {
+      --v-border-color: var(--v-theme-warning);
+    }
+    .on-background {
+      color: rgb(var(--v-theme-on-background)) !important;
+    }
+    .on-surface {
+      color: rgb(var(--v-theme-on-surface)) !important;
+    }
+    .on-surface-bright {
+      color: rgb(var(--v-theme-on-surface-bright)) !important;
+    }
+    .on-surface-light {
+      color: rgb(var(--v-theme-on-surface-light)) !important;
+    }
+    .on-primary {
+      color: rgb(var(--v-theme-on-primary)) !important;
+    }
+    .on-primary-darken-1 {
+      color: rgb(var(--v-theme-on-primary-darken-1)) !important;
+    }
+    .on-secondary {
+      color: rgb(var(--v-theme-on-secondary)) !important;
+    }
+    .on-secondary-darken-1 {
+      color: rgb(var(--v-theme-on-secondary-darken-1)) !important;
+    }
+    .on-error {
+      color: rgb(var(--v-theme-on-error)) !important;
+    }
+    .on-info {
+      color: rgb(var(--v-theme-on-info)) !important;
+    }
+    .on-success {
+      color: rgb(var(--v-theme-on-success)) !important;
+    }
+    .on-warning {
+      color: rgb(var(--v-theme-on-warning)) !important;
+    }
+</style><style>.appbar .logo{width:100px}.appbar .v-btn{color:#fff!important}.appbar .v-btn--active .v-btn__overlay{background:transparent!important;color:#fff!important}</style><style>.typewriter .subheading[data-v-22d04bb3]{color:#fff;font-family:monospace;font-size:1em;letter-spacing:.1em;margin:0 auto;overflow:hidden}@media screen and (max-width:600px){.typewriter .subheading[data-v-22d04bb3]{text-align:center}}@media screen and (min-width:600px){.typewriter .subheading[data-v-22d04bb3]{animation:typing-22d04bb3 5s steps(50),blink-caret-22d04bb3 2s step-end infinite;border-right:.15em solid rgba(235,157,13,.831);white-space:nowrap}}@media (max-width:600px){.typewriter .subheading[data-v-22d04bb3]{font-size:1.3em}}@keyframes typing-22d04bb3{0%{width:0}to{width:100%}}@keyframes blink-caret-22d04bb3{0%,to{border-color:#eb9d0dd4}50%{border-color:transparent}}.slide-fade-enter-active[data-v-22d04bb3]{transition:all 1s ease-out}.slide-fade-leave-active[data-v-22d04bb3]{transition:all 1s cubic-bezier(1,.5,.8,1)}.slide-fade-enter-from[data-v-22d04bb3],.slide-fade-leave-to[data-v-22d04bb3]{opacity:0}.image[data-v-22d04bb3]{position:absolute;z-index:99999}.image img[data-v-22d04bb3]{width:120%}@media (max-width:600px){.image[data-v-22d04bb3]{bottom:-64px!important;right:40px!important;width:150px}}@media (max-width:1320px) and (min-width:600px){.image[data-v-22d04bb3]{bottom:-114px;right:-80px}.image img[data-v-22d04bb3]{width:80%}}@media (max-width:4500px) and (min-width:1320px){.image[data-v-22d04bb3]{bottom:-168px;right:100px}}.logo[data-v-22d04bb3]{width:50%}@media (max-width:600px){.logo[data-v-22d04bb3]{width:80%}}</style><style>.parent[data-v-b4b14676]{background-size:cover}.child[data-v-b4b14676]{-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);background:#ffffff80}.author-image[data-v-b4b14676]{border-radius:10%;height:400px;-o-object-fit:cover;object-fit:cover;width:300px}</style><style>@media screen and (max-width:1000px){.v-slide-group__next{width:30px}.v-slide-group__next,.v-slide-group__prev{background:#00000080;color:#fff;font-size:15px;height:40px;margin-top:91%;position:absolute!important;right:0;z-index:99999}.v-slide-group__prev{margin-right:60px;width:40px}}</style><style>.contact-us[data-v-7d71f260]{padding-top:30px!important}</style><style>.logo[data-v-86ca78db]{margin-left:-5px;min-width:100px;width:10vw}.footer[data-v-86ca78db]{background:#000;color:#e1dede;line-height:25px;padding:40px}.insta[data-v-86ca78db]{background:linear-gradient(45deg,#f09433,#e6683c 25%,#dc2743,#cc2366 75%,#bc1888);color:#fff}</style><link rel="stylesheet" href="/_nuxt/entry.B8HqZ9cz.css" crossorigin><link rel="stylesheet" href="/_nuxt/index.DSRqBC9G.css" crossorigin><link rel="preload" as="fetch" crossorigin="anonymous" href="/_payload.json?69a90f6c-57a7-484d-aa06-59d2c8203538"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BwFQgvLc.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/BulRGynt.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/LbM4Ij1N.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/C-Gg0rtk.js"><link rel="modulepreload" as="script" crossorigin href="/_nuxt/DGrotbnZ.js"><link rel="preload" as="fetch" fetchpriority="low" crossorigin="anonymous" href="/_nuxt/builds/meta/69a90f6c-57a7-484d-aa06-59d2c8203538.json"><link rel="prefetch" as="script" crossorigin href="/_nuxt/CEcQFAbI.js"><link rel="prefetch" as="script" crossorigin href="/_nuxt/rF7nTk3c.js"><meta name="description" content="Learn about Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics."><meta name="keywords" content="Qutubuzzaman, Quthubuzzaman, mahan, Sheikh Yusuf Sulthan Shah Qadiri Chishty"><meta property="og:title" content="Sulthan Pages"><meta property="og:description" content="Learn about Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics."><script type="module" src="/_nuxt/BwFQgvLc.js" crossorigin></script></head><body><div id="__nuxt"><div class="v-application v-theme--light v-layout v-layout--full-height v-locale--is-ltr" style=""><div class="v-application__wrap"><!--[--><div class="appbar"><header class="v-toolbar v-toolbar--flat v-toolbar--density-default v-theme--light v-locale--is-ltr v-app-bar" style="background-color:rgb(0, 0, 0, .6);top:0;z-index:1004;transform:translateY(-100%);position:fixed;transition:none !important;"><!----><!--[--><div class="v-toolbar__content" style="height:64px;"><!----><!----><!--[--><div class="v-toolbar-title v-app-bar-title" style=""><div class="v-toolbar-title__placeholder"><!----><!--[--><img class="logo" src="/logo.png" loading="lazy"><!--]--></div></div><button type="button" class="v-btn v-btn--icon v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-text d-sm-none v-app-bar-nav-icon" style=""><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-menu mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></button><!--]--><div class="v-toolbar__append"><!--[--><div class="d-none d-sm-flex"><a class="v-btn v-btn--active v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-text text-none poppins" style="" href="/" aria-current="page"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Home<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-text text-none poppins" style="" href="/our-guides"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Our Guides<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-text text-none poppins" style="" href="/about-us"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->About Us<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-btn--active v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-text text-none poppins" style="" href="/#contact-us" aria-current="page"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Contact<!--]--><!--]--></span><!----><!----></a></div><!--]--></div></div><!--]--><!--[--><!----><!--]--></header><!--[--><nav class="v-navigation-drawer v-navigation-drawer--right v-navigation-drawer--temporary v-theme--light v-navigation-drawer--mobile d-sm-none" style="background-color:rgb(0, 0, 0, .8);right:0;z-index:1004;transform:translateX(256px);position:fixed;transition:none !important;"><!----><!----><div class="v-navigation-drawer__content"><!--[--><div class="v-list v-theme--light bg-transparent v-list--density-default v-list--one-line d-flex flex-column list" style="" tabindex="0" role="listbox"><!--[--><a class="v-btn v-btn--active v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-plain text-none poppins" style="" href="/" aria-current="page"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Home<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-plain text-none poppins" style="" href="#/our-guides"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Our Guides<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-plain text-none poppins" style="" href="#/about-us"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->About Us<!--]--><!--]--></span><!----><!----></a><a class="v-btn v-btn--active v-theme--light text-white v-btn--density-default v-btn--size-default v-btn--variant-plain text-none poppins" style="" href="/#contact-us" aria-current="page"><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Contact<!--]--><!--]--></span><!----><!----></a><!--]--></div><!--]--></div><!----></nav><!----><!--]--></div><!--[--><div style="height:80vh;position:relative;" data-v-22d04bb3><div class="v-responsive v-img v-img--booting v-parallax" style="height:80vh;" data-v-22d04bb3><div class="v-responsive__sizer" style=""></div><!--[--><!--[--><!----><!----><!----><!----><!----><!--]--><!--]--><div class="v-responsive__content"><!--[--><div style="background:rgba(0, 0, 0, 0.7);height:100%;" data-v-22d04bb3><div class="d-flex align-center flex-row justify-center fill-height" data-v-22d04bb3><div class="d-flex flex-column fill-height justify-center align-center text-white" data-v-22d04bb3><!----><div class="typewriter pl-4" data-v-22d04bb3><h3 class="subheading" data-v-22d04bb3> To Allah — through the true successors of the Prophet ﷺ </h3></div></div></div></div><!--]--></div></div></div><div class="parent" style="background-image:url(./home.jpg);" data-v-b4b14676><div class="flex-row child d-sm-flex justify-space-between align-center" data-v-b4b14676><div class="d-flex flex-column justify-center align-center flex-reverse" data-v-b4b14676><img class="author-image" src="./mahan.jpg" loading="lazy" data-v-b4b14676></div><div class="ma-sm-10" data-v-b4b14676><div class="v-card-title d-flex justify-center flex-column align-center" style="" data-v-b4b14676><h2 class="heading poppins-extra-bold text-center justify-center d-flex" data-v-b4b14676><!--[-->My Mission is the Call to Tawheed<!--]--></h2><div class="sp-underline" data-v-b4b14676></div></div><div class="v-card-text text-h6 pa-5 content" style="" data-v-b4b14676><div data-v-b4b14676><div class="d-flex flex-row" data-v-b4b14676><span data-v-b4b14676><i class="mdi-format-quote-open mdi v-icon notranslate v-theme--light" style="font-size:20px;height:20px;width:20px;margin-top:-10px;" aria-hidden="true" data-v-b4b14676></i><!--[--><span class="merriweather">
+    The noble declaration <b>La ilaha illallah, Muhammadur Rasulullah</b> was the divine message upheld by
+      every
+      Prophet appointed to this world. Each one of them bore witness to this truth, and every bearer of this
+      sacred
+      message endured trials and tribulations along their path.
+    </span><!--]--><i class="mdi-format-quote-close mdi v-icon notranslate v-theme--light" style="font-size:20px;height:20px;width:20px;margin-top:-10px;" aria-hidden="true" data-v-b4b14676></i><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-plain text-caption merriweather" style="" href="/quote?type=mission" data-v-b4b14676><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Read more<!--]--><!--]--></span><!----><!----></a></span></div></div></div><div class="subheading mt-2 merriweather-bold text-center" data-v-b4b14676><!--[-->Quthubuzzaman Sheikh Yusuf Sulthan Shah Qadiri Chishti<!--]--></div></div></div></div><div class="parent mb-12" style="background-image:;" data-v-b4b14676><div class="flex-row-reverse child d-sm-flex justify-space-between align-center" data-v-b4b14676><div class="d-flex flex-column justify-center align-center flex-reverse" data-v-b4b14676><img class="author-image" src="./usthad.png" loading="lazy" data-v-b4b14676></div><div class="ma-sm-10" data-v-b4b14676><div class="v-card-title d-flex justify-center flex-column align-center" style="" data-v-b4b14676><h2 class="heading poppins-extra-bold text-center justify-center d-flex" data-v-b4b14676><!--[-->Worship without Tawheed is a Soulless Deed<!--]--></h2><div class="sp-underline" data-v-b4b14676></div></div><div class="v-card-text text-h6 pa-5 content" style="" data-v-b4b14676><div data-v-b4b14676><div class="d-flex flex-row" data-v-b4b14676><span data-v-b4b14676><i class="mdi-format-quote-open mdi v-icon notranslate v-theme--light" style="font-size:20px;height:20px;width:20px;margin-top:-10px;" aria-hidden="true" data-v-b4b14676></i><!--[--><span class="merriweather">
+      No action we perform can be deemed worship unless it is executed in accordance with the sacred ordinances of
+      Allah. The Almighty has instructed us to worship him in a way that draws us near to Him, with no veils creating
+      distance or detachment. <br>The closeness can only be attained when the pure light of Tawheed is engraved deeply
+      within
+      the soul.
+    </span><!--]--><i class="mdi-format-quote-close mdi v-icon notranslate v-theme--light" style="font-size:20px;height:20px;width:20px;margin-top:-10px;" aria-hidden="true" data-v-b4b14676></i><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-plain text-caption merriweather" style="" href="/quote?type=voiceOfKhalifa" data-v-b4b14676><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->Read more<!--]--><!--]--></span><!----><!----></a></span></div></div></div><div class="subheading mt-2 merriweather-bold text-center" data-v-b4b14676><!--[--><div>
+    Sheikh Abbas Faizy Vazhikkadav<br>
+    Khalifa of Quthubuzzaman
+    </div><!--]--></div></div></div></div><div class="mb-12"><div class="v-card-title d-flex justify-center flex-column align-center" style=""><h2 class="heading poppins-extra-bold">Recent Posts</h2><div class="sp-underline"></div></div><div class="v-sheet v-theme--light mx-auto" style=""><div class="v-slide-group v-slide-group--has-affixes v-slide-group--mobile" style="" tabindex="0"><div class="v-slide-group__prev v-slide-group__prev--disabled"><i class="mdi-chevron-left mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></div><div class="v-slide-group__container"><div class="v-slide-group__content"><!--[--><!--[--><!--]--><!--]--></div></div><div class="v-slide-group__next v-slide-group__next--disabled"><i class="mdi-chevron-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></div></div></div></div><div><div class="v-card-title d-flex justify-center flex-column align-center" style=""><h2 class="heading poppins-bold">Featured Articles</h2><div class="sp-underline"></div></div><div><div class="v-sheet v-theme--light" style=""><div class="v-slide-group v-slide-group--has-affixes v-slide-group--mobile" style="" tabindex="0"><div class="v-slide-group__prev v-slide-group__prev--disabled"><i class="mdi-chevron-left mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></div><div class="v-slide-group__container"><div class="v-slide-group__content"><!--[--><!--[--><!--]--><!--]--></div></div><div class="v-slide-group__next v-slide-group__next--disabled"><i class="mdi-chevron-right mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></div></div></div></div></div><div id="contact-us" class="contact-us" data-v-7d71f260><div class="mt-7" data-v-7d71f260></div><div class="v-card-title d-flex justify-center flex-column align-center" style="" data-v-7d71f260><h2 class="heading poppins-extra-bold" data-v-7d71f260>Let’s Talk!</h2><div class="poppins text-body-1 mb-1 mt-1 text-wrap text-center" data-v-7d71f260> Have a question? Drop us a message and we’ll get back to you. </div></div><div class="ml-lg-10 mr-lg-10" data-v-7d71f260><div class="d-flex justify-space-around ml-md-10 mr-md-10" data-v-7d71f260><div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--light v-locale--is-ltr v-text-field ma-md-10 ma-2 poppins phone-field" style="" data-v-7d71f260><!----><div class="v-input__control"><!--[--><div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr" style=""><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><div class="v-field__field" data-no-activator><!----><label class="v-label v-field-label" style="" for="input-v-13"><!----><!--[-->Phone<!--]--></label><!--[--><!--[--><!----><input value size="1" type="tel" id="input-v-13" aria-describedby="input-v-13-messages" required class="v-field__input"><!----><!--]--><!--]--></div><!----><!----><div class="v-field__outline" style=""><!--[--><div class="v-field__outline__start"></div><div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" style="" for="input-v-13" aria-hidden="true"><!----><!--[-->Phone<!--]--></label></div><div class="v-field__outline__end"></div><!--]--><!----></div></div><!--]--></div><!----><div id="input-v-13-messages" class="v-input__details" role="alert" aria-live="polite"><div class="v-messages" style=""></div><!----></div></div><div class="v-input v-input--horizontal v-input--center-affix v-input--density-default v-theme--light v-locale--is-ltr v-text-field ma-md-10 ma-2" style="" data-v-7d71f260><!----><div class="v-input__control"><!--[--><div class="v-field v-field--center-affix v-field--variant-outlined v-theme--light v-locale--is-ltr" style=""><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><div class="v-field__field" data-no-activator><!----><label class="v-label v-field-label" style="" for="input-v-15"><!----><!--[-->Email<!--]--></label><!--[--><!--[--><!----><input value size="1" type="text" id="input-v-15" aria-describedby="input-v-15-messages" required class="v-field__input"><!----><!--]--><!--]--></div><!----><!----><div class="v-field__outline" style=""><!--[--><div class="v-field__outline__start"></div><div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" style="" for="input-v-15" aria-hidden="true"><!----><!--[-->Email<!--]--></label></div><div class="v-field__outline__end"></div><!--]--><!----></div></div><!--]--></div><!----><div id="input-v-15-messages" class="v-input__details" role="alert" aria-live="polite"><div class="v-messages" style=""></div><!----></div></div></div><div class="ml-md-10 mr-md-10" data-v-7d71f260><div class="v-input v-input--horizontal v-input--density-default v-theme--light v-locale--is-ltr v-textarea v-text-field ml-md-10 mr-md-10 ma-2 mt-1" style="" data-v-7d71f260><!----><div class="v-input__control"><!--[--><div class="v-field v-field--variant-outlined v-theme--light v-locale--is-ltr" style="--v-textarea-control-height:;"><div class="v-field__overlay"></div><div class="v-field__loader"><div class="v-progress-linear v-theme--light v-locale--is-ltr" style="top:0;height:0;--v-progress-linear-height:2px;" role="progressbar" aria-hidden="true" aria-valuemin="0" aria-valuemax="100"><!----><div class="v-progress-linear__background" style="opacity:NaN;"></div><div class="v-progress-linear__buffer" style="opacity:NaN;width:0%;"></div><div class="v-progress-linear__indeterminate"><!--[--><div class="v-progress-linear__indeterminate long" style=""></div><div class="v-progress-linear__indeterminate short" style=""></div><!--]--></div><!----></div></div><!----><div class="v-field__field" data-no-activator><!----><label class="v-label v-field-label" style="" for="input-v-17"><!----><!--[-->Write here<!--]--></label><!--[--><!--[--><!----><textarea class="v-field__input" rows="5" id="input-v-17" aria-describedby="input-v-17-messages" required></textarea><!----><!----><!--]--><!--]--></div><!----><!----><div class="v-field__outline" style=""><!--[--><div class="v-field__outline__start"></div><div class="v-field__outline__notch"><label class="v-label v-field-label v-field-label--floating" style="" for="input-v-17" aria-hidden="true"><!----><!--[-->Write here<!--]--></label></div><div class="v-field__outline__end"></div><!--]--><!----></div></div><!--]--></div><!----><div id="input-v-17-messages" class="v-input__details" role="alert" aria-live="polite"><div class="v-messages" style=""></div><!----></div></div></div></div><div class="text-center mb-10" data-v-7d71f260><button type="button" class="v-btn v-theme--light text-orange-darken-4 v-btn--density-default v-btn--size-default v-btn--variant-tonal" style="" data-v-7d71f260><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[--> Request a callback <!--]--><!--]--></span><!----><!----></button></div></div><!--]--><div class="footer pl-10" data-v-86ca78db><div class="left" data-v-86ca78db><div data-v-86ca78db><img class="logo" src="/logo.png" loading="lazy" data-v-86ca78db></div><div data-v-86ca78db>Powered by </div> Shah Jeelani Association <br data-v-86ca78db><b data-v-86ca78db>Quthbuzzaman Eduland </b> <br data-v-86ca78db> Chungam, Inkel City, Malappuram, Kerala <div class="mt-4" data-v-86ca78db><a class="v-btn v-btn--icon v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-flat mr-3 insta" style="" href="https://www.instagram.com/sulthan_pages/?utm_source=qr&amp;igsh=MWE3bTRpdzJ2M2M3OA%3D%3D#" data-v-86ca78db><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-instagram mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></a><a class="v-btn v-btn--icon v-theme--light bg-green v-btn--density-default v-btn--size-default v-btn--variant-flat mr-3" style="" href="https://wa.me/+971567292689" target="_blank" data-v-86ca78db><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-whatsapp mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></a><a class="v-btn v-btn--icon v-theme--light bg-blue v-btn--density-default v-btn--size-default v-btn--variant-flat mr-3" style="" href="mailto:sulthanpages@outlook.com" data-v-86ca78db><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><i class="mdi-mail mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----><!----></a></div><div class="mt-4" data-v-86ca78db><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-tonal mr-3" style="" href="tel:+919496808398" data-v-86ca78db><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->IND<!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-phone mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a><a class="v-btn v-theme--light v-btn--density-default v-btn--size-default v-btn--variant-tonal mr-3" style="" href="tel:+971567292689" data-v-86ca78db><!--[--><span class="v-btn__overlay"></span><span class="v-btn__underlay"></span><!--]--><!----><span class="v-btn__content" data-no-activator><!--[--><!--[-->UAE<!--]--><!--]--></span><span class="v-btn__append"><i class="mdi-phone mdi v-icon notranslate v-theme--light v-icon--size-default" style="" aria-hidden="true"></i></span><!----></a></div></div><div class="text-center text-grey ma-5" data-v-86ca78db> Copyright © 2025 Sulthan Pages </div></div><!--]--></div></div></div><div id="teleports"></div><script type="application/json" data-nuxt-data="nuxt-app" data-ssr="true" id="__NUXT_DATA__" data-src="/_payload.json?69a90f6c-57a7-484d-aa06-59d2c8203538">[{"state":1,"once":3,"_errors":4,"serverRendered":6,"path":7,"prerenderedAt":8},["Reactive",2],{},["Set"],["ShallowReactive",5],{},true,"/",1756601910948]</script><script>window.__NUXT__={};window.__NUXT__.config={public:{},app:{baseURL:"/",buildId:"69a90f6c-57a7-484d-aa06-59d2c8203538",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script></body></html>
