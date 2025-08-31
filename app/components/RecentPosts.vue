@@ -8,12 +8,12 @@
     <v-sheet class="mx-auto">
       <v-slide-group ref="slider" show-arrows="always">
         <v-slide-group-item v-for="post in recentPostsStore.posts" :key="post.id">
-          <div class="ma-2 d-flex">
+          <div class="ma-2 d-flex recent-post">
             <Post :id="post.id" :author="post.author" :image="post.coverImage?.url || undefined"
               style="max-width: 400px;" :title="post.title" />
           </div>
         </v-slide-group-item>
-    </v-slide-group>
+      </v-slide-group>
     </v-sheet>
   </div>
 </template>
@@ -27,20 +27,18 @@ const { mobile } = useDisplay()
 const recentPostsStore = useRecentPostsStore()
 const slider = ref()
 
-// Watch for posts loading/changing
 watch(
   () => recentPostsStore.posts,
   async () => {
     await nextTick()
-    slider.value?.scrollTo('start')
+    const firstSlide = slider.value?.$el.querySelector('.recent-post') as HTMLElement
+    if (firstSlide) {
+      firstSlide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+    }
   },
   { immediate: true },
 )
 
-onMounted(async () => {
-  await nextTick()
-  slider.value?.scrollTo('start')
-})
 </script>
 
 <style>

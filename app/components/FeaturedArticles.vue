@@ -9,7 +9,7 @@
       <v-sheet>
         <v-slide-group ref="slider" show-arrows="always">
           <v-slide-group-item v-for="post in featuredPostsStore.posts" :key="post.id">
-            <div class="ma-2 d-flex">
+            <div class="ma-2 d-flex featured-post">
               <Post :id="post.id" :author="post.author" :image="post.coverImage?.url || undefined"
                 style="max-width: 400px;" :title="post.title" />
             </div>
@@ -27,21 +27,18 @@ import { useFeaturedPostsStore } from '~/stores/featured-posts'
 const featuredPostsStore = useFeaturedPostsStore()
 const slider = ref()
 
-// Watch when posts load or change
 watch(
   () => featuredPostsStore.posts,
   async () => {
     await nextTick()
-    // Force Vuetify to recalc arrow states
-    slider.value?.scrollTo('start')
+    const firstSlide = slider.value?.$el.querySelector('.featured-post') as HTMLElement
+    if (firstSlide) {
+      firstSlide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+    }
   },
   { immediate: true },
 )
 
-onMounted(async () => {
-  await nextTick()
-  slider.value?.scrollTo('start')
-})
 </script>
 
 <style>
