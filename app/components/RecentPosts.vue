@@ -6,7 +6,7 @@
     </v-card-title>
 
     <v-sheet class="mx-auto">
-      <v-slide-group ref="slider" show-arrows="always">
+      <v-slide-group :key="sliderKey" ref="slider" show-arrows="always">
         <v-slide-group-item v-for="post in recentPostsStore.posts" :key="post.id">
           <div class="ma-2 d-flex recent-post">
             <Post :id="post.id" :author="post.author" :image="post.coverImage?.url || undefined"
@@ -19,26 +19,23 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, ref, watch } from 'vue'
-import { useDisplay } from 'vuetify'
+import { nextTick, ref, watch } from 'vue'
 import { useRecentPostsStore } from '~/stores/recent-posts'
 
-const { mobile } = useDisplay()
 const recentPostsStore = useRecentPostsStore()
-const slider = ref()
+const slider = ref<InstanceType<typeof import('vuetify/components').VSlideGroup>>()
+const sliderKey = ref(0)
 
 watch(
   () => recentPostsStore.posts,
-  async () => {
-    await nextTick()
-    const firstSlide = slider.value?.$el.querySelector('.recent-post') as HTMLElement
-    if (firstSlide) {
-      firstSlide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+  async (newPosts) => {
+    if (newPosts.length) {
+      await nextTick()
+      sliderKey.value += 1
     }
   },
-  { immediate: true },
+  { immediate: true }
 )
-
 </script>
 
 <style>

@@ -1,13 +1,13 @@
 <template>
   <div>
     <v-card-title class="d-flex justify-center flex-column align-center">
-      <h2 class="heading poppins-bold">Featured Articles</h2>
+      <h2 class="heading poppins-extra-bold">Featured Articles</h2>
       <div class="sp-underline" />
     </v-card-title>
 
     <div>
       <v-sheet>
-        <v-slide-group ref="slider" show-arrows="always">
+        <v-slide-group :key="sliderKey"  ref="slider" show-arrows="always">
           <v-slide-group-item v-for="post in featuredPostsStore.posts" :key="post.id">
             <div class="ma-2 d-flex featured-post">
               <Post :id="post.id" :author="post.author" :image="post.coverImage?.url || undefined"
@@ -21,22 +21,22 @@
 </template>
 
 <script setup lang="ts">
-import { nextTick, onMounted, ref, watch } from 'vue'
+import { nextTick, ref, watch } from 'vue'
 import { useFeaturedPostsStore } from '~/stores/featured-posts'
 
 const featuredPostsStore = useFeaturedPostsStore()
 const slider = ref()
+const sliderKey = ref(0)
 
 watch(
   () => featuredPostsStore.posts,
-  async () => {
-    await nextTick()
-    const firstSlide = slider.value?.$el.querySelector('.featured-post') as HTMLElement
-    if (firstSlide) {
-      firstSlide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' })
+  async (newPosts) => {
+    if (newPosts.length) {
+      await nextTick()
+      sliderKey.value += 1
     }
   },
-  { immediate: true },
+  { immediate: true }
 )
 
 </script>
