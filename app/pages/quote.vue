@@ -15,10 +15,8 @@
 
     <div class="body-1 d-md-flex justify-space-between align-start">
       <!-- Left: image + quote (1/3 width) -->
-      <div
-        class="left-section d-sm-flex flex-sm-row flex-md-column justify-md-center justify-sm-space-around pa-10"
-        style="flex: 1"
-      >
+      <div class="left-section d-sm-flex flex-sm-row flex-md-column justify-md-center justify-sm-space-around pa-10"
+        style="flex: 1">
         <img class="author-image" :src="(quotes as any)[type].authorImage" loading="lazy">
 
         <div class="quote d-flex justify-center align-center">
@@ -32,30 +30,30 @@
       </div>
 
       <!-- Right: article (2/3 width) -->
-      <div
-        class="right-section pl-10 pr-10 pt-sm-10 pb-10 merriweather "
-        style="line-height: 33px; font-size: 1.1em; flex: 10"
-        v-html="(quotes as any)[type].article"
-      />
+      <div class="right-section pl-10 pr-10 pt-sm-10 pb-10 merriweather "
+        style="line-height: 33px; font-size: 1.1em; flex: 10" v-html="(quotes as any)[type].article" />
     </div>
 
   </div>
 </template>
 
 <script lang="ts" setup>
-  import { useRoute } from 'vue-router'
-  import { quotes } from '@/components/common/quotes'
+import { useRoute } from 'vue-router'
+import { quotes } from '@/components/common/quotes'
 
-  const route = useRoute()
-  const type = route.query.type as string
+const route = useRoute()
+const type = (route.query.type as string) || 'mission'
 
-    useHead({
-    title: (quotes as any)[type].title || 'Article',
-    meta: [
-      { property: 'og:title', content: (quotes as any)[type].title },
-      { property: 'og:description', content: (quotes as any)[type].quote || '' },
-    ],
-  })
+const quoteItem = (quotes as any)[type]
+useHead({
+  title: quoteItem?.title || 'Article',
+  meta: [
+    { name: 'description', content: quoteItem?.quote || '' },
+    { property: 'og:title', content: quoteItem?.title },
+    { property: 'og:description', content: quoteItem?.quote },
+    { property: 'og:image', content: quoteItem?.authorImage },
+  ],
+})
 
 </script>
 <style scoped>

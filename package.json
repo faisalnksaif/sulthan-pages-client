@@ -7,7 +7,9 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "predeploy": "npm run generate && echo 'sulthanpages.com' > dist/CNAME",
+    "deploy": "npm run predeploy && gh-pages -d dist"
   },
   "dependencies": {
     "@apollo/client": "^3.14.0",
@@ -27,6 +29,7 @@
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
     "@types/webfontloader": "^1.6.38",
+    "gh-pages": "^6.3.0",
     "sass-embedded": "^1.91.0"
   }
 }
