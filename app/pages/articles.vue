@@ -55,6 +55,7 @@ const postStore = usArticlesStore()
 const page = ref(1)
 
 onMounted(async () => {
+  postStore.posts = []
   postStore.fetchPosts(page.value, categoryId)
 })
 
