@@ -17,7 +17,7 @@
       <!-- Left: image + quote (1/3 width) -->
       <div class="left-section d-sm-flex flex-sm-row flex-md-column justify-md-center justify-sm-space-around pa-10"
         style="flex: 1">
-        <img class="author-image" :src="(quotes as any)[type].authorImage" loading="lazy" alt="Quthubuzzaman">
+        <img class="author-image" :src="(quotes as any)[type].authorImage" loading="lazy">
 
         <div class="quote d-flex justify-center align-center">
           <div>
