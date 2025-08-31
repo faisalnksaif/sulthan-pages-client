@@ -30,8 +30,8 @@
     >
       <v-list class="d-flex flex-column list">
         <v-btn class="text-none poppins" color="white" :to="'/'" variant="plain">Home</v-btn>
-        <v-btn class="text-none poppins" color="white" :href="'#/our-guides'" variant="plain">Our Guides</v-btn>
-        <v-btn class="text-none poppins" color="white" :href="'#/about-us'" variant="plain">About Us</v-btn>
+        <v-btn class="text-none poppins" color="white" :href="'/our-guides'" variant="plain">Our Guides</v-btn>
+        <v-btn class="text-none poppins" color="white" :href="'/about-us'" variant="plain">About Us</v-btn>
         <!-- <v-btn class="text-none poppins" color="white" variant="text">Categories</v-btn> -->
         <v-btn class="text-none poppins" color="white" :to="'/#contact-us'" variant="plain">Contact</v-btn>
       </v-list>
