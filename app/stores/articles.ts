@@ -2,7 +2,7 @@ import { provideApolloClient } from '@vue/apollo-composable'
 import { defineStore } from 'pinia'
 import { ref } from 'vue'
 import apolloClient from '@/appolo/client'
-import { GET_POSTS } from '@/appolo/graphql/queries'
+import { GET_POSTS, GET_POSTS_IN_CATEGORY } from '@/appolo/graphql/queries'
 
 export interface Article {
   id: string
@@ -21,15 +21,15 @@ export const usArticlesStore = defineStore('articles', () => {
   const loading = ref(false)
   const error = ref<Error | null>(null)
 
-  async function fetchPosts(page: number) {
+  async function fetchPosts(page: number, categoryId?: string) {
     loading.value = true
     error.value = null
 
     try {
       const { data } = await provideApolloClient(apolloClient)(() =>
         apolloClient.query<{ posts: Article[], postsCount: number }>({
-          query: GET_POSTS,
-          variables: { take: PAGE_SIZE, skip: (page - 1) * PAGE_SIZE },
+          query: categoryId ? GET_POSTS_IN_CATEGORY : GET_POSTS,
+          variables: { take: PAGE_SIZE, skip: (page - 1) * PAGE_SIZE, categoryId },
           fetchPolicy: 'network-only',
         }),
       )

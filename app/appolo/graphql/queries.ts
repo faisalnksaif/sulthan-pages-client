@@ -67,6 +67,30 @@ export const GET_POSTS = gql`
   }
 `
 
+export const GET_POSTS_IN_CATEGORY = gql`
+  query GetPosts($take: Int!, $skip: Int!, $categoryId: ID) {
+    posts(
+      take: $take
+      skip: $skip
+      orderBy: { createdAt: desc }
+      where: { category: { id: { equals: $categoryId } } }
+    ) {
+      id
+      title
+      author
+      createdAt
+      updatedAt
+      coverImage {
+        url
+      }
+      tags {
+        name
+      }
+    }
+    postsCount(where: { category: { id: { equals: $categoryId } } })
+  }
+`
+
 
 export const GET_POST = gql`
   query GetPost($id: ID!) {
@@ -88,3 +112,16 @@ export const GET_POST = gql`
     }
   }
 `
+
+export const GET_CATEGORIES = gql`
+  query GetCategories {
+    categories {
+      id
+      name
+      image {
+        url
+      }
+    }
+  }
+`
+

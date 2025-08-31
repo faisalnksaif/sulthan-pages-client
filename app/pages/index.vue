@@ -4,18 +4,21 @@
   <VoiceOfKhalifa class="mb-12" />
   <RecentPosts class="mb-12" />
   <FeaturedArticles />
+  <Categories />
   <ContactUs />
   <!-- <Categories class="mb-12" /> -->
 </template>
 
 <script lang="ts" setup>
 import { onMounted } from 'vue'
+import Categories from '~/components/Categories.vue'
+import { useCategoriesStore } from '~/stores/categories'
 import { useFeaturedPostsStore } from '~/stores/featured-posts'
 import { useRecentPostsStore } from '~/stores/recent-posts'
 
 const recentPostStore = useRecentPostsStore()
 const featuredPostStore = useFeaturedPostsStore()
-
+const categoriesStore = useCategoriesStore()
 
 useHead({
   title: 'Sulthan Pages - Sheikh Yusuf Sulthan Shah Qadiri Chishty',
@@ -50,5 +53,6 @@ await useAsyncData('featured-posts', () =>
 
 onMounted(async () => {
   recentPostStore.fetchPosts()
+  categoriesStore.fetchCategories()
 })
 </script>

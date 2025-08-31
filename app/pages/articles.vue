@@ -1,7 +1,10 @@
 <template>
   <div class="body pb-10">
     <div class=" pr-10 pt-10">
-      <div class="poppins-extra-bold text-h4">Articles</div>
+      <div class="poppins-extra-bold text-h4">
+        <span v-if="categoryName">{{ categoryName }}</span>
+        <span v-else>Articles</span>
+      </div>
       <v-divider />
     </div>
 
@@ -32,7 +35,7 @@
       </div>
 
 
-      <div class="text-center mt-5" v-if="postStore.postsCount < postStore.posts.length && postStore.posts > 0">
+      <div class="text-center mt-5" v-if="postStore.postsCount < postStore.posts.length && postStore.posts.length > 0">
         <v-btn :loading="postStore.loading" color="black" variant="tonal" @click="loadMore">Load more articles</v-btn>
       </div>
 
@@ -43,17 +46,21 @@
 <script lang="ts" setup>
 import { usArticlesStore } from '~/stores/articles';
 const router = useRouter()
+const route = useRoute()
+
+const categoryId = route.query.id as string
+const categoryName = route.query.name as string
 
 const postStore = usArticlesStore()
 const page = ref(1)
 
 onMounted(async () => {
-  postStore.fetchPosts(page.value)
+  postStore.fetchPosts(page.value, categoryId)
 })
 
 function loadMore() {
   page.value += 1
-  postStore.fetchPosts(page.value)
+  postStore.fetchPosts(page.value, categoryId)
 }
 
 function goToArticle(id: string) {
