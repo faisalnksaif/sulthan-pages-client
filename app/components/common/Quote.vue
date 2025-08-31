@@ -1,9 +1,7 @@
 <template>
   <div class="parent" :style="{ backgroundImage: props.background ? `url(${props.background})` : '' }">
-    <div
-      class="child d-sm-flex justify-space-between align-center"
-      :class="props.authorImagePosition === 'left' ? 'flex-row' : 'flex-row-reverse'"
-    >
+    <div class="child d-sm-flex justify-space-between align-center"
+      :class="props.authorImagePosition === 'left' ? 'flex-row' : 'flex-row-reverse'">
       <div class="d-flex flex-column justify-center align-center flex-reverse">
         <img v-if="authorImage" class="author-image" :src="authorImage" loading="lazy">
       </div>
@@ -22,7 +20,10 @@
                 <v-icon icon="mdi-format-quote-open" size="20" style="margin-top:-10px" />
                 <slot name="quote" class="merriweather" />
                 <v-icon icon="mdi-format-quote-close" size="20" style="margin-top:-10px" />
-                <v-btn class="text-caption merriweather" :href="`/quote?type=${type}`" variant="plain">Read more</v-btn>
+                <div :class="`text-${authorImagePosition === 'left' ? 'right' : 'left'}`">
+                  <v-btn class="text-caption poppins mt-2" color="brown" :href="`/quote?type=${type}`" variant="tonal">Read
+                    more</v-btn>
+                </div>
               </span>
 
             </div>
@@ -37,21 +38,21 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps({
-    background: {
-      type: String,
-    },
-    authorImage: {
-      type: String,
-    },
-    authorImagePosition: {
-      type: String,
-      default: 'left',
-    },
-    type: {
-      type: String,
-    },
-  })
+const props = defineProps({
+  background: {
+    type: String,
+  },
+  authorImage: {
+    type: String,
+  },
+  authorImagePosition: {
+    type: String,
+    default: 'left',
+  },
+  type: {
+    type: String,
+  },
+})
 </script>
 <style scoped>
 .parent {
