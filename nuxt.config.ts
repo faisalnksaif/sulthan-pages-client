@@ -30,25 +30,23 @@ export default defineNuxtConfig({
         '/our-guides',
         '/quote/mission',
         '/quote/voiceOfKhalifa',
+        '/sitemap.xml',
       ],
     }
   },
   modules: [
     '@nuxtjs/sitemap',
-    '@nuxtjs/robots',
+    '@nuxtjs/robots'
   ],
-  robots: {
-    rules: [
-      { userAgent: '*', allow: '/' } // allow all pages to be crawled
-    ],
-    sitemap: 'https://sulthanpages.com/sitemap.xml'
-  },
   site: {
-    siteUrl: 'https://sulthanpages.com', // your domain
-    defaults: {
-      changefreq: 'weekly',
-      priority: 0.7,
-      lastmod: new Date(),
-    },
+    url: 'https://sulthanpages.com',   // ✅ required for sitemap
+    name: 'Sulthan Pages',             // optional
   },
+  sitemap: {
+    exclude: ['/admin/**']
+  },
+  robots: {
+    rules: [{ userAgent: '*', allow: '/' }],
+    sitemap: ['https://sulthanpages.com/sitemap.xml']
+  }
 })
