@@ -43,7 +43,7 @@ export default defineNuxtConfig({
     ],
     sitemap: 'https://sulthanpages.com/sitemap.xml'
   },
-  sitemap: {
+  site: {
     siteUrl: 'https://sulthanpages.com', // your domain
     defaults: {
       changefreq: 'weekly',
