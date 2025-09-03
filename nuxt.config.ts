@@ -33,8 +33,22 @@ export default defineNuxtConfig({
       ],
     }
   },
-  site: {
-    url: 'https://sulthanpages.com/',
-    name: 'Sulthan Pages'
+  modules: [
+    '@nuxtjs/sitemap',
+    '@nuxtjs/robots',
+  ],
+  robots: {
+    rules: [
+      { userAgent: '*', allow: '/' } // allow all pages to be crawled
+    ],
+    sitemap: 'https://sulthanpages.com/sitemap.xml'
+  },
+  sitemap: {
+    siteUrl: 'https://sulthanpages.com', // your domain
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.7,
+      lastmod: new Date(),
+    },
   },
 })
