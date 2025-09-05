@@ -7,6 +7,9 @@
 </template>
 <script setup>
 useHead({
+  link: [
+    { rel: 'canonical', href: 'https://sulthanpages.com/' }
+  ],
   script: [
     {
       type: "application/ld+json",
