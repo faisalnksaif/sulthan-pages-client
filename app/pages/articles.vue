@@ -16,7 +16,7 @@
       </div>
 
       <div v-for="article in postStore.posts" class="pa-3">
-        <div class="d-flex align-center cursor" @click="goToArticle(article.id)">
+        <div class="d-flex align-center cursor" @click="goToArticle(article.id, article.title)">
           <div>
             <img style="" v-if="article.coverImage" :src="article.coverImage.url" />
           </div>
@@ -64,10 +64,9 @@ function loadMore() {
   postStore.fetchPosts(page.value, categoryId)
 }
 
-function goToArticle(id: string) {
+function goToArticle(id: string, title: string) {
   router.push({
-    path: '/article',        // the actual path of your page
-    query: { id }  // query parameter
+    path: `/article/${id}/${title}`,        // the actual path of your page
   })
 }
 
