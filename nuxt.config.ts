@@ -32,6 +32,7 @@ export default defineNuxtConfig({
         '/quote/mission',
         '/quote/voiceOfKhalifa',
         '/sitemap.xml',
+        '/article/:id/:slug'
       ],
     }
   },
