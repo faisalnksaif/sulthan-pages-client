@@ -10,9 +10,8 @@
         <div class="background">
           <div class="d-flex align-center flex-row justify-center fill-height">
             <div class="d-flex flex-column fill-height justify-center align-center text-white">
-              <v-img class="author-img" cover crossorigin="anonymous" referrerpolicy="no-referrer"
-                :src="`${post?.coverImage?.url || 'https://cdn.vuetifyjs.com/images/cards/sunshine.jpg'}`" />
-
+              <v-img v-if="post?.coverImage?.url" class="author-img" cover crossorigin="anonymous"
+                referrerpolicy="no-referrer" :src="`${post?.coverImage?.url}`" />
             </div>
           </div>
         </div>
@@ -36,11 +35,13 @@ import { type Article, usePostStore } from '~/stores/post'
 
 const postStore = usePostStore()
 const route = useRoute()
-const id = route.query.id as string
 
 const post = ref<Article | undefined>(undefined)
 
 onMounted(async () => {
+  const id = route.params.id as string
+  console.log(id)
+
   post.value = await postStore.fetchPost(id)
   console.log(post.value?.content.document[0])
 
@@ -52,8 +53,6 @@ onMounted(async () => {
     ],
   })
 })
-
-
 </script>
 
 <style scoped>

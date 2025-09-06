@@ -39,8 +39,7 @@ const router = useRouter()
 
 const goToPage = () => {
   router.push({
-    path: '/article',        // the actual path of your page
-    query: { id: props.id }  // query parameter
+    path: `/article/${props.id}/${props.title}`,        // the actual path of your page
   })
 }
 
