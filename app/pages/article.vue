@@ -32,6 +32,7 @@
 import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { type Article, usePostStore } from '~/stores/post'
+import { slugify } from '~/utils'
 
 definePageMeta({
   ssr: false
@@ -55,6 +56,12 @@ onMounted(async () => {
       { property: 'og:title', content: post.value?.title },
       { property: 'og:image', content: post.value?.coverImage?.url || '' },
     ],
+    link: [
+      {
+        rel: 'canonical',
+        href: `https://sulthanpages.com/article/${id}/${slugify(post.value?.title || '')}`
+      }
+    ]
   })
 })
 </script>
