@@ -24,6 +24,7 @@ export default defineNuxtConfig({
     }
   },
   nitro: {
+    preset: 'github-pages',
     prerender: {
       routes: [
         '/',
@@ -31,8 +32,8 @@ export default defineNuxtConfig({
         '/our-guides',
         '/quote/mission',
         '/quote/voiceOfKhalifa',
-        '/sitemap.xml',
-        '/article/:id/:slug'
+        '/article',
+        '/sitemap.xml'
       ],
     }
   },

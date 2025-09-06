@@ -43,7 +43,7 @@ const route = useRoute()
 const post = ref<Article | undefined>(undefined)
 
 onMounted(async () => {
-  const id = route.params.id as string
+  const id = route.query.id as string
   console.log(id)
 
   post.value = await postStore.fetchPost(id)

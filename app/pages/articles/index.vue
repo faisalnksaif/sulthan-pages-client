@@ -66,7 +66,11 @@ function loadMore() {
 
 function goToArticle(id: string, title: string) {
   router.push({
-    path: `/article/${id}/${title}`,        // the actual path of your page
+    path: `/article`,        // the actual path of your page
+    query:{
+      id,
+      title
+    }
   })
 }
 
