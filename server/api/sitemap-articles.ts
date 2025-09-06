@@ -1,29 +1,31 @@
-// server/api/sitemap-articles.ts
 import apolloClient from '@/appolo/client'
-import { GET_POSTS } from '@/appolo/graphql/queries'
+import { gql } from '@apollo/client/core'
 
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   const { data } = await apolloClient.query({
-    query: GET_POSTS,
-    variables: { take: 1000, skip: 0 } // fetch enough articles
+    query: gql`
+      query GetPosts {
+        posts {
+          id
+          title
+        }
+      }
+    `,
+    fetchPolicy: 'network-only'
   })
 
-  // return an XML sitemap response
-  setHeader(event, 'Content-Type', 'application/xml')
-
-  const urls = data.posts.map((post: any) => `
-    <url>
-      <loc>https://sulthanpages.com/article/${post.id}/${slugify(post.title)}</loc>
-    </url>
-  `).join('')
-
-  return `<?xml version="1.0" encoding="UTF-8"?>
-  <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-    ${urls}
-  </urlset>`
+  // Return JSON array for nuxt-simple-sitemap
+  return data.posts.map((post: any) => ({
+    loc: `https://sulthanpages.com/article/${post.id}/${slugify(post.title)}`,
+    changefreq: 'weekly',
+    priority: 0.8,
+    lastmod: new Date().toISOString()
+  }))
 })
 
-// utility
 function slugify(str: string) {
-  return str.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '')
+  return str
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-') // replace spaces/special chars with "-"
+    .replace(/(^-|-$)+/g, '')   // trim leading/trailing "-"
 }
