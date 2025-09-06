@@ -50,6 +50,7 @@ onMounted(async () => {
   post.value = await postStore.fetchPost(id)
   console.log(post.value?.content.document[0])
 
+  const canonical = `https://sulthanpages.com/article/?id=${id}&title=${slugify(post.value?.title || '')}`
   useHead({
     title: post.value?.title || 'Article',
     meta: [
@@ -59,7 +60,19 @@ onMounted(async () => {
     link: [
       {
         rel: 'canonical',
-        href: `https://sulthanpages.com/article/${id}/${slugify(post.value?.title || '')}`
+        href: canonical
+      }
+    ],
+    script: [
+      {
+        type: 'application/ld+json',
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "headline": post.value?.title,
+          "url": canonical,
+          "author": { "@type": "Person", "name": post.value?.author || 'Unknown' },
+        })
       }
     ]
   })
