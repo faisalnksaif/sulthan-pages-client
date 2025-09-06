@@ -44,7 +44,13 @@ export default defineNuxtConfig({
     name: 'Sulthan Pages',             // optional
   },
   sitemap: {
-    exclude: ['/admin/**']
+    exclude: ['/admin/**'],
+    sources: ['/api/sitemap-articles'], // tell sitemap where to get article URLs
+    autoLastmod: true,                  // adds <lastmod> automatically
+    defaults: {
+      changefreq: 'weekly',
+      priority: 0.7
+    }
   },
   robots: {
     rules: [{ userAgent: '*', allow: '/' }],

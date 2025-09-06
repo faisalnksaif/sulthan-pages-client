@@ -1,0 +1,81 @@
+<template>
+  <div class="body pb-10">
+    <div class=" pr-10 pt-10">
+      <div class="poppins-extra-bold text-h4">
+        <span v-if="categoryName">{{ categoryName }}</span>
+        <span v-else>Articles</span>
+      </div>
+      <v-divider />
+    </div>
+
+    <div class="merriweather mt-5" style="line-height: 33px; font-size: 1.1em; flex: 10; min-height: 90vh">
+      <div v-if="postStore.posts.length === 0 && postStore.loading">
+        <v-skeleton-loader type="paragraph" class="mb-2" />
+        <v-skeleton-loader type="paragraph" class="mb-2" />
+        <v-skeleton-loader type="paragraph" />
+      </div>
+
+      <div v-for="article in postStore.posts" class="pa-3">
+        <div class="d-flex align-center cursor" @click="goToArticle(article.id, article.title)">
+          <div>
+            <img style="" v-if="article.coverImage" :src="article.coverImage.url" />
+          </div>
+          <div class="pl-5">
+            <div class="merriweather-bold">
+              {{ article.title }}
+            </div>
+
+            <div style="font-size:.85em" class="text-grey-darken-2">
+              {{ article.author }}
+            </div>
+          </div>
+
+        </div>
+        <v-divider />
+      </div>
+
+    </div>
+  </div>
+</template>
+
+<script lang="ts" setup>
+import { usArticlesStore } from '~/stores/articles';
+const router = useRouter()
+const route = useRoute()
+
+const categoryId = route.query.id as string
+const categoryName = route.query.name as string
+
+const postStore = usArticlesStore()
+
+onMounted(async () => {
+  const page = +(route.params.page || 1)
+  console.log(page)
+  postStore.posts = []
+  postStore.fetchPosts(page, categoryId)
+})
+
+function goToArticle(id: string, title: string) {
+  router.push({
+    path: `/article/${id}/${title}`,        // the actual path of your page
+  })
+}
+
+</script>
+
+<style scoped>
+.background {
+  background: rgba(255, 255, 255, 0.3) !important;
+  background: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  backdrop-filter: blur(8px);
+  object-fit: fill;
+}
+
+img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+</style>
