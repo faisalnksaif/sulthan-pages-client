@@ -33,6 +33,10 @@ import { onMounted, ref } from 'vue'
 import { useRoute } from 'vue-router'
 import { type Article, usePostStore } from '~/stores/post'
 
+definePageMeta({
+  ssr: false
+})
+
 const postStore = usePostStore()
 const route = useRoute()
 
