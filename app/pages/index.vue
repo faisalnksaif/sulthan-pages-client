@@ -21,18 +21,18 @@ const featuredPostStore = useFeaturedPostsStore()
 const categoriesStore = useCategoriesStore()
 
 useHead({
-  title: 'Sulthan Pages - Sheikh Yusuf Sulthan Shah Qadiri Chishty',
+  title: 'Sulthan Pages - Quthubuzzaman Sheikh Yusuf Sulthan Shah Qadiri Chishty',
   meta: [
     {
       name: 'description',
-      content: 'Learn about Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics.'
+      content: 'Learn about Quthubuzzaman Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics.'
     },
     {
       name: 'keywords',
       content: 'Qutubuzzaman, Quthubuzzaman, mahan, Sheikh Yusuf Sulthan Shah Qadiri Chishty'
     },
     { property: 'og:title', content: 'Sulthan Pages' },
-    { property: 'og:description', content: 'Learn about Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics.' },
+    { property: 'og:description', content: 'Learn about Quthubuzzaman Sheikh Yusuf Sulthan Shah Qadiri Chishty, Mahan, Qutubuzzaman, and related topics.' },
   ],
   script: [
     {
