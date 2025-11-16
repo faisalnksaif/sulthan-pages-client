@@ -35,7 +35,7 @@
         <div class="poppins-extra-bold text-h5">Sheikh Abbas Faizy</div>
 
         <div class="mt-5">
-          The true khalifa of Sheikh Yusuf Sulthan, Sheikh Abbas Faizy carries this luminous path forward. With unwavering dedication, he guides seekers to live by La ilaha illa Allah in its fullest meaning — not as mere belief, but as a reality that shapes the soul, the home, and the world. His words and example continue to awaken hearts and inspire a generation to walk the road to Allah.</div>
+          The true khalifa of Sheikh Yusuf Sulthan, Sheikh Abbas Faizy carries this luminous path forward. With unwavering dedication, he guides seekers to live by La ilaha illa Allah Muhammadur Rasulullah in its fullest meaning — not as mere belief, but as a reality that shapes the soul, the home, and the world. His words and example continue to awaken hearts and inspire a generation to walk the road to Allah.</div>
       </div>
 
     </div>
