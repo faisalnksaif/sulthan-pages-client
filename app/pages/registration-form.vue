@@ -7,17 +7,12 @@
             <h1 class="text-h4 font-weight-black text-white mb-1 grandview-font">Quthubuzzaman Center</h1>
             <div class="d-flex align-center">
               <v-badge dot color="success" class="mr-2" inline></v-badge>
-              <span class="text-blue-lighten-4 text-caption font-weight-bold text-uppercase tracking-wider">Registration Portal</span>
+              <span class="text-blue-lighten-4 text-caption font-weight-bold text-uppercase tracking-wider">Registration
+                Portal</span>
             </div>
           </div>
-          <v-btn
-            variant="tonal"
-            color="white"
-            rounded="xl"
-            prepend-icon="mdi-format-list-bulleted"
-            to="/registration-entries"
-            class="text-none"
-          >
+          <v-btn variant="tonal" color="white" rounded="xl" prepend-icon="mdi-format-list-bulleted"
+            to="/registration-entries" class="text-none">
             My Entries
           </v-btn>
         </div>
@@ -34,40 +29,43 @@
                 STEP {{ currentStepIndex }} / {{ totalSteps }}
               </v-chip>
             </div>
-            
+
             <div class="step-progress-container">
-              <div 
-                v-for="n in totalSteps" 
-                :key="n" 
-                class="step-dot" 
-                :class="{ 'active': currentStepIndex >= n }"
-              ></div>
+              <div v-for="n in totalSteps" :key="n" class="step-dot" :class="{ 'active': currentStepIndex >= n }"></div>
               <div class="step-line">
-                <div class="step-line-fill" :style="{ width: ((currentStepIndex - 1) / (totalSteps - 1)) * 100 + '%' }"></div>
+                <div class="step-line-fill" :style="{ width: ((currentStepIndex - 1) / (totalSteps - 1)) * 100 + '%' }">
+                </div>
               </div>
             </div>
           </div>
 
           <v-card-text class="pa-6 pa-sm-10">
             <v-window v-model="currentStep">
-              
+
               <v-window-item :value="1">
                 <div class="section-title malayalam-font mb-6">വ്യക്തിഗത വിവരങ്ങൾ (Personal Details)</div>
                 <v-row>
                   <v-col cols="12">
-                    <v-text-field v-model="form.name" label="പേര് (Full Name)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" prepend-inner-icon="mdi-account" />
+                    <v-text-field v-model="form.name" label="പേര് (Full Name)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" prepend-inner-icon="mdi-account" />
                   </v-col>
                   <v-col cols="12" md="6">
-                    <v-text-field v-model="form.phone" label="ഫോൺ നമ്പർ (Phone)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" prepend-inner-icon="mdi-phone" type="tel" inputmode="numeric" pattern="[0-9]*" />
+                    <v-text-field v-model="form.phone" label="ഫോൺ നമ്പർ (Phone)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" prepend-inner-icon="mdi-phone" type="tel"
+                      inputmode="numeric" pattern="[0-9]*" />
                   </v-col>
                   <v-col cols="12" md="6">
-                    <v-text-field v-model="form.baiathYear" label="ബൈഅത്ത് വർഷം (Year)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" prepend-inner-icon="mdi-calendar-check" inputmode="numeric" min="0" />
+                    <v-text-field v-model="form.baiathYear" label="ബൈഅത്ത് വർഷം (Year)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" prepend-inner-icon="mdi-calendar-check"
+                      inputmode="numeric" min="0" />
                   </v-col>
                   <v-col cols="6">
-                    <v-text-field v-model="form.age" label="വയസ്സ് (Age)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" type="number" inputmode="numeric" min="0" />
+                    <v-text-field v-model="form.age" label="വയസ്സ് (Age)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" type="number" inputmode="numeric" min="0" />
                   </v-col>
                   <v-col cols="6">
-                    <v-select v-model="form.bloodGroup" :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']" label="Blood Group" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" />
+                    <v-select v-model="form.bloodGroup" :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']"
+                      label="Blood Group" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" />
                   </v-col>
                 </v-row>
               </v-window-item>
@@ -76,40 +74,33 @@
                 <div class="section-title malayalam-font mb-6">സ്ഥലവും തൊഴിലും (Location & Profession)</div>
                 <v-row>
                   <v-col cols="12">
-                    <v-textarea v-model="form.permanentAddress" label="സ്ഥിരമായ വിലാസം (Permanent Address)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" rows="2" />
+                    <v-textarea v-model="form.permanentAddress" label="സ്ഥിരമായ വിലാസം (Permanent Address)"
+                      variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" rows="2" />
                   </v-col>
-                  
+
                   <v-col cols="12" class="py-0">
-                    <v-checkbox 
-                      v-model="sameAsPermanent" 
-                      label="നിലവിലെ വിലാസവും ഇത് തന്നെയാണ് (Same as Permanent Address)" 
-                      color="primary" 
-                      hide-details 
-                      density="compact"
-                      @change="handleAddressSync"
-                    />
+                    <v-checkbox v-model="sameAsPermanent"
+                      label="നിലവിലെ വിലാസവും ഇത് തന്നെയാണ് (Same as Permanent Address)" color="primary" hide-details
+                      density="compact" @change="handleAddressSync" />
                   </v-col>
 
                   <v-col cols="12">
-                    <v-textarea 
-                      v-model="form.currentAddress" 
-                      label="നിലവിലെ വിലാസം (Current Address)" 
-                      variant="outlined" 
-                      bg-color="blue-grey-lighten-10" 
-                      rounded="lg" 
-                      rows="2" 
-                      :disabled="sameAsPermanent"
-                    />
+                    <v-textarea v-model="form.currentAddress" label="നിലവിലെ വിലാസം (Current Address)"
+                      variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" rows="2"
+                      :disabled="sameAsPermanent" />
                   </v-col>
-                  
+
                   <v-col cols="12" md="4">
-                    <v-text-field v-model="form.education" label="വിദ്യാഭ്യാസം (Education)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" />
+                    <v-text-field v-model="form.education" label="വിദ്യാഭ്യാസം (Education)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" />
                   </v-col>
                   <v-col cols="12" md="4">
-                    <v-text-field v-model="form.job" label="ജോലി (Job)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" />
+                    <v-text-field v-model="form.job" label="ജോലി (Job)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" />
                   </v-col>
                   <v-col cols="12" md="4">
-                    <v-text-field v-model="form.hobbies" label="വിനോദങ്ങൾ (Hobbies)" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" />
+                    <v-text-field v-model="form.hobbies" label="വിനോദങ്ങൾ (Hobbies)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" />
                   </v-col>
                 </v-row>
               </v-window-item>
@@ -117,22 +108,35 @@
               <v-window-item :value="3">
                 <div class="d-flex align-center justify-space-between mb-6">
                   <div class="section-title malayalam-font">കുടുംബാംഗങ്ങൾ (Family Members)</div>
-                  <v-btn color="primary" variant="flat" rounded="pill" size="small" prepend-icon="mdi-plus" @click="addFamilyMember">Add Member</v-btn>
+                  <v-btn color="primary" variant="flat" rounded="pill" size="small" prepend-icon="mdi-plus"
+                    @click="addFamilyMember">Add Member</v-btn>
                 </div>
                 <v-row>
                   <v-col v-for="(member, index) in form.familyMembers" :key="index" cols="12" md="6">
                     <v-card class="member-card pa-4 rounded-xl border" elevation="0">
                       <div class="d-flex justify-space-between align-center mb-4">
                         <span class="text-subtitle-2 font-weight-bold color-primary">Member #{{ index + 1 }}</span>
-                        <v-btn icon="mdi-close" color="red-lighten-1" variant="text" size="small" @click="removeMember(index)" :disabled="form.familyMembers.length === 1" />
+                        <v-btn icon="mdi-close" color="red-lighten-1" variant="text" size="small"
+                          @click="removeMember(index)" :disabled="form.familyMembers.length === 1" />
                       </div>
                       <v-row dense>
-                        <v-col cols="12"><v-text-field v-model="member.name" label="പേര്" variant="outlined" bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
-                        <v-col cols="6"><v-text-field v-model="member.age" label="വയസ്സ്" variant="outlined" bg-color="blue-grey-lighten-10" density="comfortable" type="number" inputmode="numeric" min="0" /></v-col>
-                        <v-col cols="6"><v-select v-model="member.blood" :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']" label="Blood" variant="outlined" bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
+                        <v-col cols="12"><v-text-field v-model="member.name" label="പേര്" variant="outlined"
+                            bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
+
+                        <v-col cols="12"><v-text-field v-model="member.relation" label="ബന്ധം" variant="outlined"
+                            bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
+
+                        <v-col cols="6"><v-text-field v-model="member.age" label="വയസ്സ്" variant="outlined"
+                            bg-color="blue-grey-lighten-10" density="comfortable" type="number" inputmode="numeric"
+                            min="0" /></v-col>
+                        <v-col cols="6"><v-select v-model="member.blood"
+                            :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']" label="Blood" variant="outlined"
+                            bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
                         <v-col cols="12" class="d-flex ga-4">
-                          <v-checkbox v-model="member.baiath" label="ബൈഅത്ത്" color="primary" density="compact" hide-details />
-                          <v-checkbox v-model="member.married" label="വിവാഹം" color="primary" density="compact" hide-details />
+                          <v-checkbox v-model="member.baiath" label="ബൈഅത്ത്" color="primary" density="compact"
+                            hide-details />
+                          <v-checkbox v-model="member.married" label="വിവാഹം" color="primary" density="compact"
+                            hide-details />
                         </v-col>
                       </v-row>
                     </v-card>
@@ -143,15 +147,21 @@
               <v-window-item :value="4">
                 <div class="section-title malayalam-font mb-6">സാമൂഹിക പ്രവർത്തനങ്ങൾ (Social & Activities)</div>
                 <v-row>
-                  <v-col cols="6" md="3"><v-text-field v-model="form.lit" label="സാഹിത്യം" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
-                  <v-col cols="6" md="3"><v-text-field v-model="form.sports" label="കായികം" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
-                  <v-col cols="6" md="3"><v-text-field v-model="form.martial" label="ആയോധനം" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
-                  <v-col cols="6" md="3"><v-text-field v-model="form.cultural" label="സാംസ്‌കാരികം" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
+                  <v-col cols="6" md="3"><v-text-field v-model="form.lit" label="സാഹിത്യം" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
+                  <v-col cols="6" md="3"><v-text-field v-model="form.sports" label="കായികം" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
+                  <v-col cols="6" md="3"><v-text-field v-model="form.martial" label="ആയോധനം" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
+                  <v-col cols="6" md="3"><v-text-field v-model="form.cultural" label="സാംസ്‌കാരികം" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
                   <v-col cols="12">
                     <v-divider class="my-4" />
                     <v-row>
-                      <v-col cols="12" md="6"><v-text-field v-model="form.politics" label="രാഷ്ട്രീയം" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
-                      <v-col cols="12" md="6"><v-text-field v-model="form.position" label="ഭാരവാഹിത്വം" variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
+                      <v-col cols="12" md="6"><v-text-field v-model="form.politics" label="രാഷ്ട്രീയം"
+                          variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
+                      <v-col cols="12" md="6"><v-text-field v-model="form.position" label="ഭാരവാഹിത്വം"
+                          variant="outlined" bg-color="blue-grey-lighten-10" rounded="lg" /></v-col>
                     </v-row>
                   </v-col>
                 </v-row>
@@ -159,28 +169,16 @@
             </v-window>
 
             <div class="d-flex justify-space-between align-center mt-10">
-              <v-btn v-if="currentStepIndex > 1" variant="text" color="grey-darken-2" prepend-icon="mdi-arrow-left" @click="prevStep">Back</v-btn>
+              <v-btn v-if="currentStepIndex > 1" variant="text" color="grey-darken-2" prepend-icon="mdi-arrow-left"
+                @click="prevStep">Back</v-btn>
               <div v-else></div>
 
-              <v-btn
-                v-if="currentStepIndex < totalSteps"
-                color="primary"
-                size="large"
-                rounded="pill"
-                class="px-10 text-none"
-                @click="nextStep"
-              >
+              <v-btn v-if="currentStepIndex < totalSteps" color="primary" size="large" rounded="pill"
+                class="px-10 text-none" @click="nextStep">
                 Continue
               </v-btn>
-              <v-btn
-                v-else
-                color="success"
-                size="large"
-                rounded="pill"
-                class="px-10 text-none"
-                :loading="isSubmitting"
-                @click="submitForm"
-              >
+              <v-btn v-else color="success" size="large" rounded="pill" class="px-10 text-none" :loading="isSubmitting"
+                @click="submitForm">
                 {{ isEditMode ? 'Update Record' : 'Submit Form' }}
               </v-btn>
             </div>
@@ -223,7 +221,7 @@ const deviceIdentifier = ref('')
 const currentRecordId = ref('')
 const isEditMode = ref(false)
 
-const initialMember = () => ({ name: '', age: '', blood: '', edu: '', baiath: false, married: false, job: '' })
+const initialMember = () => ({ name: '', relation: '', age: '', blood: '', edu: '', baiath: false, married: false, job: '' })
 
 const initialForm = () => ({
   deviceIdentifier: '',
@@ -414,20 +412,76 @@ onMounted(async () => {
 <style scoped>
 @import url('https://fonts.cdnfonts.com/css/grandview');
 
-.form-page { background-color: #f8fafc; min-height: 100vh; }
+.form-page {
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
 .header-gradient {
   background: linear-gradient(135deg, #0d47a1 0%, #1976d2 100%);
   border-bottom-left-radius: 40px;
   border-bottom-right-radius: 40px;
 }
-.main-form-card { border: 1px solid rgba(255, 255, 255, 0.8); }
-.section-title { font-size: 1rem; font-weight: 800; color: #1a237e; letter-spacing: 0.5px; }
-.color-primary { color: #0d47a1; }
-.malayalam-font { font-family: 'Meera', 'Kartika', sans-serif; }
-.step-progress-container { position: relative; display: flex; justify-content: space-between; align-items: center; }
-.step-dot { width: 10px; height: 10px; background: #cbd5e1; border-radius: 50%; z-index: 2; transition: 0.3s; }
-.step-dot.active { background: #1976d2; transform: scale(1.4); }
-.step-line { position: absolute; top: 50%; left: 0; right: 0; height: 2px; background: #e2e8f0; transform: translateY(-50%); z-index: 1; }
-.step-line-fill { height: 100%; background: #1976d2; transition: 0.4s ease; }
-.member-card { background: #fff; transition: 0.2s; }
+
+.main-form-card {
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.section-title {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #1a237e;
+  letter-spacing: 0.5px;
+}
+
+.color-primary {
+  color: #0d47a1;
+}
+
+.malayalam-font {
+  font-family: 'Meera', 'Kartika', sans-serif;
+}
+
+.step-progress-container {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step-dot {
+  width: 10px;
+  height: 10px;
+  background: #cbd5e1;
+  border-radius: 50%;
+  z-index: 2;
+  transition: 0.3s;
+}
+
+.step-dot.active {
+  background: #1976d2;
+  transform: scale(1.4);
+}
+
+.step-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #e2e8f0;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.step-line-fill {
+  height: 100%;
+  background: #1976d2;
+  transition: 0.4s ease;
+}
+
+.member-card {
+  background: #fff;
+  transition: 0.2s;
+}
 </style>
