@@ -121,12 +121,65 @@ const apiBaseUrl = config.public.registrationApiBase || 'http://localhost:4000'
 const router = useRouter()
 
 const STORAGE_DEVICE_ID = 'registrationForm.deviceIdentifier'
+const DEVICE_ID_COOKIE_KEY = STORAGE_DEVICE_ID
 
 const generateDeviceId = () => {
   if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
     return `dev-${crypto.randomUUID()}`
   }
   return `dev-${Date.now()}-${Math.floor(Math.random() * 1_000_000)}`
+}
+
+const getCookieValue = (key: string) => {
+  if (!process.client) {
+    return ''
+  }
+
+  const prefix = `${key}=`
+  const entry = document.cookie
+    .split('; ')
+    .find((item) => item.startsWith(prefix))
+
+  return entry ? decodeURIComponent(entry.slice(prefix.length)) : ''
+}
+
+const getStoredDeviceId = () => {
+  if (!process.client) {
+    return ''
+  }
+
+  try {
+    const value = localStorage.getItem(STORAGE_DEVICE_ID) || ''
+    if (value) {
+      return value
+    }
+  } catch {
+    // Ignore storage access errors and fall back to cookies.
+  }
+
+  return getCookieValue(DEVICE_ID_COOKIE_KEY)
+}
+
+const persistDeviceId = (value: string) => {
+  if (!process.client || !value) {
+    return
+  }
+
+  try {
+    localStorage.setItem(STORAGE_DEVICE_ID, value)
+  } catch {
+    // Ignore storage access errors and keep cookie as fallback.
+  }
+
+  document.cookie = `${DEVICE_ID_COOKIE_KEY}=${encodeURIComponent(value)}; path=/; max-age=31536000; samesite=lax`
+}
+
+const ensureDeviceId = () => {
+  const existing = getStoredDeviceId()
+  const next = existing || generateDeviceId()
+
+  persistDeviceId(next)
+  return next
 }
 
 type Entry = {
@@ -185,12 +238,7 @@ const editEntry = (recordId: string) => {
 
 onMounted(async () => {
   if (process.client) {
-    let stored = localStorage.getItem(STORAGE_DEVICE_ID) || ''
-    if (!stored) {
-      stored = generateDeviceId()
-      localStorage.setItem(STORAGE_DEVICE_ID, stored)
-    }
-    deviceIdentifier.value = stored
+    deviceIdentifier.value = ensureDeviceId()
     await loadEntries()
   }
 })
