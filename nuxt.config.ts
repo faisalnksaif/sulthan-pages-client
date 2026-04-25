@@ -42,7 +42,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       registrationApiBase: process.env.NUXT_PUBLIC_REGISTRATION_API_BASE || (process.env.NODE_ENV === 'production'
-        ? 'https://api.sulthanpages.com/api/graphql'
+        ? 'https://api.sulthanpages.com/api/public'
         : 'http://localhost:4000')
     }
   },
