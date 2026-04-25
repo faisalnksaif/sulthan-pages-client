@@ -2,10 +2,14 @@
   <v-app>
     <AppBar />
     <NuxtPage />
-    <Footer />
+    <Footer v-if="showFooter" />
   </v-app>
 </template>
 <script setup>
+const route = useRoute()
+
+// const showFooter = computed(() => route.path !== '/registration-form')
+
 useHead({
   link: [
     { rel: 'canonical', href: 'https://sulthanpages.com/' }

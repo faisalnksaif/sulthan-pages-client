@@ -30,6 +30,7 @@ export default defineNuxtConfig({
         '/',
         '/about-us',
         '/our-guides',
+        '/registration-form',
         '/quote/mission',
         '/quote/voiceOfKhalifa',
         '/article',
