@@ -31,11 +31,17 @@ export default defineNuxtConfig({
         '/about-us',
         '/our-guides',
         '/registration-form',
+        '/registration-entries',
         '/quote/mission',
         '/quote/voiceOfKhalifa',
         '/article',
         '/sitemap.xml'
       ],
+    }
+  },
+  runtimeConfig: {
+    public: {
+      registrationApiBase: process.env.NUXT_PUBLIC_REGISTRATION_API_BASE || 'http://localhost:4000'
     }
   },
   modules: [
