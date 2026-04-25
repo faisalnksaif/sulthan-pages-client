@@ -181,7 +181,7 @@
                 :loading="isSubmitting"
                 @click="submitForm"
               >
-                Submit Form
+                {{ isEditMode ? 'Update Record' : 'Submit Form' }}
               </v-btn>
             </div>
           </v-card-text>
@@ -198,7 +198,13 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
 
-// Logic Refs
+const config = useRuntimeConfig()
+const apiBaseUrl = config.public.registrationApiBase || 'http://localhost:4000'
+const route = useRoute()
+const router = useRouter()
+
+const STORAGE_DEVICE_ID = 'registrationForm.deviceIdentifier'
+
 const showSnackbar = ref(false)
 const snackbarMessage = ref('')
 const snackbarColor = ref('green-darken-2')
@@ -206,10 +212,15 @@ const currentStep = ref(1)
 const isSubmitting = ref(false)
 const totalSteps = 4
 const sameAsPermanent = ref(false)
+const deviceIdentifier = ref('')
+const currentRecordId = ref('')
+const isEditMode = ref(false)
 
 const initialMember = () => ({ name: '', age: '', blood: '', edu: '', baiath: false, married: false, job: '' })
 
-const form = ref({
+const initialForm = () => ({
+  deviceIdentifier: '',
+  recordIdentifier: '',
   name: '',
   phone: '',
   baiathYear: '',
@@ -229,25 +240,76 @@ const form = ref({
   familyMembers: [initialMember()]
 })
 
-// Sync logic for address
-const handleAddressSync = () => {
-  if (sameAsPermanent.value) {
-    form.value.currentAddress = form.value.permanentAddress
-  }
-}
-
-// Watch permanent address for changes if sync is active
-watch(() => form.value.permanentAddress, (newVal) => {
-  if (sameAsPermanent.value) {
-    form.value.currentAddress = newVal
-  }
-})
+const form = ref(initialForm())
 
 const showMessage = (msg: string, color = 'green-darken-2') => {
   snackbarMessage.value = msg
   snackbarColor.value = color
   showSnackbar.value = true
 }
+
+const normalizeRecordPayload = (payload: any) => {
+  const source = payload && typeof payload === 'object' ? payload : {}
+  const normalized = {
+    ...initialForm(),
+    ...source,
+  }
+
+  const members = Array.isArray(source.familyMembers) ? source.familyMembers : []
+  normalized.familyMembers = members.length
+    ? members.map((member: any) => ({ ...initialMember(), ...(member || {}) }))
+    : [initialMember()]
+
+  return normalized
+}
+
+const extractRecordPayload = (response: any) => {
+  if (!response) return null
+  if (Array.isArray(response)) return response[0] || null
+  if (response.data) {
+    if (Array.isArray(response.data)) return response.data[0] || null
+    return response.data
+  }
+  if (response.submission) return response.submission
+  return response
+}
+
+const loadRecord = async (recordId: string) => {
+  try {
+    const byPath = await $fetch(`${apiBaseUrl}/api/public/form-submissions/${recordId}`, {
+      method: 'GET',
+    })
+    const payload = extractRecordPayload(byPath)
+    if (payload) return payload
+  } catch {
+    // Fallback to query endpoint.
+  }
+
+  try {
+    const byQuery = await $fetch(`${apiBaseUrl}/api/public/form-submissions`, {
+      method: 'GET',
+      query: {
+        recordIdentifier: recordId,
+        deviceIdentifier: deviceIdentifier.value || undefined,
+      },
+    })
+    return extractRecordPayload(byQuery)
+  } catch {
+    return null
+  }
+}
+
+const handleAddressSync = () => {
+  if (sameAsPermanent.value) {
+    form.value.currentAddress = form.value.permanentAddress
+  }
+}
+
+watch(() => form.value.permanentAddress, (newVal) => {
+  if (sameAsPermanent.value) {
+    form.value.currentAddress = newVal
+  }
+})
 
 const currentStepIndex = computed(() => Number(currentStep.value))
 
@@ -267,16 +329,74 @@ const addFamilyMember = () => form.value.familyMembers.push(initialMember())
 const removeMember = (index: number) => form.value.familyMembers.splice(index, 1)
 
 const submitForm = async () => {
+  if (isSubmitting.value) {
+    return
+  }
+
   isSubmitting.value = true
+
   try {
-    showMessage('Registration Successful!')
-    // router logic here...
+    form.value.deviceIdentifier = deviceIdentifier.value
+    form.value.recordIdentifier = currentRecordId.value
+
+    if (isEditMode.value && currentRecordId.value) {
+      await $fetch(`${apiBaseUrl}/api/public/form-submissions/${currentRecordId.value}`, {
+        method: 'PUT',
+        body: form.value,
+      })
+      showMessage('Registration updated successfully!')
+    } else {
+      const response: any = await $fetch(`${apiBaseUrl}/api/public/form-submissions`, {
+        method: 'POST',
+        body: form.value,
+      })
+
+      const created = extractRecordPayload(response)
+      const createdId = created?.recordIdentifier || created?.id || ''
+      if (createdId) {
+        currentRecordId.value = createdId
+        form.value.recordIdentifier = createdId
+      }
+
+      isEditMode.value = true
+      showMessage('Registration submitted successfully!')
+    }
+
+    await router.push('/registration-entries')
   } catch (e) {
+    console.error('Form submit failed:', e)
     showMessage('Error submitting form', 'red-darken-2')
   } finally {
     isSubmitting.value = false
   }
 }
+
+onMounted(async () => {
+  if (!process.client) {
+    return
+  }
+
+  deviceIdentifier.value = localStorage.getItem(STORAGE_DEVICE_ID) || ''
+
+  const recordId = ((route.query.recordId as string) || '').trim()
+  if (!recordId) {
+    return
+  }
+
+  currentRecordId.value = recordId
+  const payload = await loadRecord(recordId)
+
+  if (!payload) {
+    showMessage('Unable to load this record.', 'red-darken-2')
+    return
+  }
+
+  form.value = normalizeRecordPayload(payload)
+  form.value.deviceIdentifier = deviceIdentifier.value
+  form.value.recordIdentifier = recordId
+  isEditMode.value = true
+  showMessage('Record loaded. You can edit and update it now.', 'blue-darken-2')
+})
 </script>
 
 <style scoped>
