@@ -205,6 +205,13 @@ const router = useRouter()
 
 const STORAGE_DEVICE_ID = 'registrationForm.deviceIdentifier'
 
+const generateDeviceId = () => {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return `dev-${crypto.randomUUID()}`
+  }
+  return `dev-${Date.now()}-${Math.floor(Math.random() * 1_000_000)}`
+}
+
 const showSnackbar = ref(false)
 const snackbarMessage = ref('')
 const snackbarColor = ref('green-darken-2')
@@ -376,7 +383,12 @@ onMounted(async () => {
     return
   }
 
-  deviceIdentifier.value = localStorage.getItem(STORAGE_DEVICE_ID) || ''
+  let stored = localStorage.getItem(STORAGE_DEVICE_ID) || ''
+  if (!stored) {
+    stored = generateDeviceId()
+    localStorage.setItem(STORAGE_DEVICE_ID, stored)
+  }
+  deviceIdentifier.value = stored
 
   const recordId = ((route.query.recordId as string) || '').trim()
   if (!recordId) {

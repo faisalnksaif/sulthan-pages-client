@@ -122,6 +122,13 @@ const router = useRouter()
 
 const STORAGE_DEVICE_ID = 'registrationForm.deviceIdentifier'
 
+const generateDeviceId = () => {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') {
+    return `dev-${crypto.randomUUID()}`
+  }
+  return `dev-${Date.now()}-${Math.floor(Math.random() * 1_000_000)}`
+}
+
 type Entry = {
   recordIdentifier: string
   name: string
@@ -178,12 +185,13 @@ const editEntry = (recordId: string) => {
 
 onMounted(async () => {
   if (process.client) {
-    deviceIdentifier.value = localStorage.getItem(STORAGE_DEVICE_ID) || ''
-    if (!deviceIdentifier.value) {
-      showMessage('Please open the form first to sync records.', 'orange-darken-2')
-    } else {
-      await loadEntries()
+    let stored = localStorage.getItem(STORAGE_DEVICE_ID) || ''
+    if (!stored) {
+      stored = generateDeviceId()
+      localStorage.setItem(STORAGE_DEVICE_ID, stored)
     }
+    deviceIdentifier.value = stored
+    await loadEntries()
   }
 })
 </script>
