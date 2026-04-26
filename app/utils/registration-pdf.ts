@@ -195,7 +195,7 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
   table.style.fontSize = '10px'
 
   const headerRow = document.createElement('tr')
-  const headers = ['പേര്', 'വയസ്സ്', 'രക്തഗ്രൂപ്പ്', 'വിദ്യാഭ്യാസം', 'ബൈഅത്ത്', 'വിവാഹം', 'ജോലി']
+  const headers = ['പേര്', 'ബന്ധം', 'വയസ്സ്', 'രക്തഗ്രൂപ്പ്', 'വിദ്യാഭ്യാസം', 'ബൈഅത്ത്', 'വിവാഹം', 'ജോലി']
   headers.forEach((headerText) => {
     const th = document.createElement('th')
     th.textContent = headerText
@@ -222,6 +222,7 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
       const tr = document.createElement('tr')
       const rowData = [
         member.name,
+        member.relation,
         member.age,
         member.blood,
         member.edu,
