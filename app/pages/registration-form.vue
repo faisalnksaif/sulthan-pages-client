@@ -40,7 +40,7 @@
           </div>
 
           <v-card-text class="pa-6 pa-sm-10">
-            <v-window v-model="currentStep">
+            <v-window v-model="currentStep" :touch="false">
 
               <v-window-item :value="1">
                 <div class="section-title malayalam-font mb-6">വ്യക്തിഗത വിവരങ്ങൾ (Personal Details)</div>
