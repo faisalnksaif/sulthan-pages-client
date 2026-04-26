@@ -83,6 +83,11 @@
                   <v-icon size="14" class="mr-1">mdi-calendar-check</v-icon>
                   {{ entry.baiathYear || 'N/A' }}
                 </div>
+
+                <div class="d-flex align-center text-caption text-grey-darken-1 mt-1" v-if="entry.createdAt">
+                  <v-icon size="14" class="mr-1">mdi-update</v-icon>
+                  Updated: {{ formatDate(entry.createdAt) }}
+                </div>
               </div>
 
               <div class="ml-4">
@@ -187,6 +192,7 @@ type Entry = {
   name: string
   phone: string
   baiathYear: string
+  createdAt: string
 }
 
 const deviceIdentifier = ref('')
@@ -208,6 +214,21 @@ const normalizeApiResponse = (response: any) => {
   return response.data || response.submissions || []
 }
 
+const formatDate = (value: string) => {
+  if (!value) return 'N/A'
+
+  const parsed = new Date(value)
+  if (Number.isNaN(parsed.getTime())) {
+    return 'N/A'
+  }
+
+  return new Intl.DateTimeFormat('en-IN', {
+    day: '2-digit',
+    month: 'short',
+    year: 'numeric',
+  }).format(parsed)
+}
+
 const loadEntries = async () => {
   if (!deviceIdentifier.value) return
   isLoading.value = true
@@ -222,7 +243,8 @@ const loadEntries = async () => {
       recordIdentifier: item.recordIdentifier || item.id,
       name: item.name || '',
       phone: item.phone || '',
-      baiathYear: item.baiathYear || ''
+      baiathYear: item.baiathYear || '',
+      createdAt: item.createdAt || item.createdAt || '',
     }))
   } catch (error) {
     console.error('Failed to load entries:', error)

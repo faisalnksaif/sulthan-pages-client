@@ -29,6 +29,9 @@ export default defineNuxtConfig({
       routes: [
         '/',
         '/about-us',
+        '/admin/login',
+        '/admin/registration-entries',
+        '/download-registration-pdf',
         '/our-guides',
         '/registration-form',
         '/registration-entries',
@@ -41,10 +44,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      registrationApiBase:'https://api.sulthanpages.com'
-      //  process.env.NUXT_PUBLIC_REGISTRATION_API_BASE || (process.env.NODE_ENV === 'production'
-      //   ? 'https://api.sulthanpages.com'
-      //   : 'http://localhost:4000')
+      registrationApiBase: process.env.NUXT_PUBLIC_REGISTRATION_API_BASE || (process.env.NODE_ENV === 'production'
+        ? 'https://api.sulthanpages.com'
+        : 'http://localhost:4000')
     }
   },
   modules: [
@@ -65,7 +67,7 @@ export default defineNuxtConfig({
     }
   },
   robots: {
-    rules: [{ userAgent: '*', allow: '/' }],
+    groups: [{ userAgent: '*', allow: '/' }],
     sitemap: ['https://sulthanpages.com/sitemap.xml']
   }
 })
