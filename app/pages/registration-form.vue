@@ -112,7 +112,7 @@
               <v-window-item :value="3">
                 <div class="d-flex align-center justify-space-between mb-6">
                   <div class="section-title malayalam-font">കുടുംബാംഗങ്ങൾ (Family Members)</div>
-                  <v-btn color="primary" variant="flat" rounded="pill" size="small" prepend-icon="mdi-plus"
+                  <v-btn class="d-none d-sm-inline-flex" color="primary" variant="flat" rounded="pill" size="small" prepend-icon="mdi-plus"
                     @click="addFamilyMember">Add Member</v-btn>
                 </div>
                 <v-row>
@@ -147,6 +147,10 @@
                             hide-details />
                           <v-checkbox v-model="member.married" label="വിവാഹം" color="primary" density="compact"
                             hide-details />
+                        </v-col>
+                        <v-col v-if="index === form.familyMembers.length - 1" cols="12" class="d-sm-none">
+                          <v-btn block color="primary" variant="flat" rounded="pill" prepend-icon="mdi-plus"
+                            @click="addFamilyMember">Add Member</v-btn>
                         </v-col>
                       </v-row>
                     </v-card>
