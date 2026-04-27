@@ -182,8 +182,8 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
   const systemSection = document.createElement('div')
   systemSection.style.display = 'grid'
   systemSection.style.rowGap = '4px'
-  systemSection.appendChild(createLabelValueLine('രേഖ ഐഡി', entry.recordIdentifier || entry.id))
-  systemSection.appendChild(createLabelValueLine('ഡിവൈസ് ഐഡന്റിഫയർ', entry.deviceIdentifier))
+  // systemSection.appendChild(createLabelValueLine('രേഖ ഐഡി', entry.recordIdentifier || entry.id))
+  // systemSection.appendChild(createLabelValueLine('ഡിവൈസ് ഐഡന്റിഫയർ', entry.deviceIdentifier))
   systemSection.appendChild(createLabelValueLine('സൃഷ്ടിച്ച തീയതി', entry.createdAt))
   container.appendChild(systemSection)
 
