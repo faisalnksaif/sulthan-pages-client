@@ -95,6 +95,10 @@
                       bg-color="blue-grey-lighten-10" rounded="lg" />
                   </v-col>
                   <v-col cols="12" md="4">
+                    <v-text-field v-model="form.skills" label="കഴിവുകൾ (Skills)" variant="outlined"
+                      bg-color="blue-grey-lighten-10" rounded="lg" />
+                  </v-col>
+                  <v-col cols="12" md="4">
                     <v-text-field v-model="form.job" label="ജോലി (Job)" variant="outlined"
                       bg-color="blue-grey-lighten-10" rounded="lg" />
                   </v-col>
@@ -132,6 +136,12 @@
                         <v-col cols="6"><v-select v-model="member.blood"
                             :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']" label="Blood" variant="outlined"
                             bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
+                        <v-col cols="12"><v-text-field v-model="member.edu" label="വിദ്യാഭ്യാസം" variant="outlined"
+                          bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
+                        <v-col cols="12"><v-text-field v-model="member.skills" label="കഴിവുകൾ" variant="outlined"
+                          bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
+                        <v-col cols="12"><v-text-field v-model="member.job" label="ജോലി" variant="outlined"
+                          bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
                         <v-col cols="12" class="d-flex ga-4">
                           <v-checkbox v-model="member.baiath" label="ബൈഅത്ത്" color="primary" density="compact"
                             hide-details />
@@ -274,7 +284,17 @@ const deviceIdentifier = ref('')
 const currentRecordId = ref('')
 const isEditMode = ref(false)
 
-const initialMember = () => ({ name: '', relation: '', age: '', blood: '', edu: '', baiath: false, married: false, job: '' })
+const initialMember = () => ({
+  name: '',
+  relation: '',
+  age: '',
+  blood: '',
+  edu: '',
+  skills: '',
+  baiath: false,
+  married: false,
+  job: '',
+})
 
 const initialForm = () => ({
   deviceIdentifier: '',
@@ -287,6 +307,7 @@ const initialForm = () => ({
   permanentAddress: '',
   currentAddress: '',
   education: '',
+  skills: '',
   job: '',
   hobbies: '',
   lit: '',
