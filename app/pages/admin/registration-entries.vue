@@ -354,6 +354,16 @@ const normalizePhoneForWhatsApp = (value: string) => {
     return digits
   }
 
+  // UAE local mobile numbers usually start with 05XXXXXXXX.
+  if (digits.startsWith('05') && digits.length === 10) {
+    return `971${digits.slice(1)}`
+  }
+
+  // Also handle UAE numbers entered without the leading zero.
+  if (digits.startsWith('5') && digits.length === 9) {
+    return `971${digits}`
+  }
+
   if (digits.length === 10) {
     return `91${digits}`
   }
