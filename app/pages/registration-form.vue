@@ -124,23 +124,23 @@
                           @click="removeMember(index)" :disabled="form.familyMembers.length === 1" />
                       </div>
                       <v-row dense>
-                        <v-col cols="12"><v-text-field v-model="member.name" label="പേര്" variant="outlined"
+                        <v-col cols="12"><v-text-field v-model="member.name" label="പേര് (Name)" variant="outlined"
                             bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
 
-                        <v-col cols="12"><v-text-field v-model="member.relation" label="ബന്ധം" variant="outlined"
+                        <v-col cols="12"><v-text-field v-model="member.relation" label="ബന്ധം (Relation)" variant="outlined"
                             bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
 
-                        <v-col cols="6"><v-text-field v-model="member.age" label="വയസ്സ്" variant="outlined"
+                        <v-col cols="6"><v-text-field v-model="member.age" label="വയസ്സ് (Age)" variant="outlined"
                             bg-color="blue-grey-lighten-10" density="comfortable" type="number" inputmode="numeric"
                             min="0" /></v-col>
                         <v-col cols="6"><v-select v-model="member.blood"
-                            :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']" label="Blood" variant="outlined"
+                            :items="['A+', 'A-', 'B+', 'B-', 'O+', 'O-', 'AB+', 'AB-']" label="രക്തഗ്രൂപ്പ് (Blood Group)" variant="outlined"
                             bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
-                        <v-col cols="12"><v-text-field v-model="member.edu" label="വിദ്യാഭ്യാസം" variant="outlined"
+                        <v-col cols="12"><v-text-field v-model="member.edu" label="വിദ്യാഭ്യാസം (Education)" variant="outlined"
                           bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
-                        <v-col cols="12"><v-text-field v-model="member.skills" label="കഴിവുകൾ" variant="outlined"
+                        <v-col cols="12"><v-text-field v-model="member.skills" label="കഴിവുകൾ (Skills)" variant="outlined"
                           bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
-                        <v-col cols="12"><v-text-field v-model="member.job" label="ജോലി" variant="outlined"
+                        <v-col cols="12"><v-text-field v-model="member.job" label="ജോലി (Job)" variant="outlined"
                           bg-color="blue-grey-lighten-10" density="comfortable" /></v-col>
                         <v-col cols="12" class="d-flex ga-4">
                           <v-checkbox v-model="member.baiath" label="ബൈഅത്ത്" color="primary" density="compact"
