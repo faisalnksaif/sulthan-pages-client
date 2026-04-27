@@ -10,6 +10,7 @@ export type FamilyMember = {
   baiath?: boolean
   married?: boolean
   edu?: string
+  skills?: string
   job?: string
 }
 
@@ -24,6 +25,7 @@ export type FormSubmissionDetails = {
   permanentAddress?: string
   currentAddress?: string
   education?: string
+  skills?: string
   job?: string
   hobbies?: string
   lit?: string
@@ -57,6 +59,7 @@ export const normalizeFamilyMembers = (members: unknown): FamilyMember[] => {
       baiath: Boolean(item.baiath),
       married: Boolean(item.married),
       edu: item.edu || '',
+      skills: item.skills || '',
       job: item.job || '',
     }
   })
@@ -135,6 +138,7 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
   infoGrid.appendChild(createLabelValueLine('വയസ്സ്', entry.age))
   infoGrid.appendChild(createLabelValueLine('രക്തഗ്രൂപ്പ്', entry.bloodGroup))
   infoGrid.appendChild(createLabelValueLine('വിദ്യാഭ്യാസം', entry.education))
+  infoGrid.appendChild(createLabelValueLine('കഴിവുകൾ', entry.skills))
   container.appendChild(infoGrid)
 
   const fullWidthSection = document.createElement('div')
@@ -145,6 +149,7 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
   fullWidthSection.appendChild(createLabelValueLine('നിലവിലെ വിലാസം', entry.currentAddress))
   fullWidthSection.appendChild(createLabelValueLine('വിനോദങ്ങൾ (Hobbies)', entry.hobbies))
   fullWidthSection.appendChild(createLabelValueLine('ജോലി', entry.job))
+  fullWidthSection.appendChild(createLabelValueLine('ഭാരവാഹിത്വം', entry.position))
   container.appendChild(fullWidthSection)
 
   const activityHeader = document.createElement('h3')
@@ -177,9 +182,9 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
   const systemSection = document.createElement('div')
   systemSection.style.display = 'grid'
   systemSection.style.rowGap = '4px'
-  // systemSection.appendChild(createLabelValueLine('രേഖ ഐഡി', entry.recordIdentifier || entry.id))
-  // systemSection.appendChild(createLabelValueLine('ഡിവൈസ് ഐഡന്റിഫയർ', entry.deviceIdentifier))
-  systemSection.appendChild(createLabelValueLine('Created Date', entry.createdAt))
+  systemSection.appendChild(createLabelValueLine('രേഖ ഐഡി', entry.recordIdentifier || entry.id))
+  systemSection.appendChild(createLabelValueLine('ഡിവൈസ് ഐഡന്റിഫയർ', entry.deviceIdentifier))
+  systemSection.appendChild(createLabelValueLine('സൃഷ്ടിച്ച തീയതി', entry.createdAt))
   container.appendChild(systemSection)
 
   const familyHeader = document.createElement('h3')
@@ -195,7 +200,7 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
   table.style.fontSize = '10px'
 
   const headerRow = document.createElement('tr')
-  const headers = ['പേര്', 'ബന്ധം', 'വയസ്സ്', 'രക്തഗ്രൂപ്പ്', 'വിദ്യാഭ്യാസം', 'ബൈഅത്ത്', 'വിവാഹം', 'ജോലി']
+  const headers = ['പേര്', 'ബന്ധം', 'വയസ്സ്', 'രക്തഗ്രൂപ്പ്', 'വിദ്യാഭ്യാസം', 'കഴിവുകൾ', 'ബൈഅത്ത്', 'വിവാഹം', 'ജോലി']
   headers.forEach((headerText) => {
     const th = document.createElement('th')
     th.textContent = headerText
@@ -226,6 +231,7 @@ const buildPdfContainer = (entry: FormSubmissionDetails) => {
         member.age,
         member.blood,
         member.edu,
+        member.skills,
         member.baiath ? 'ഉണ്ട്' : 'ഇല്ല',
         member.married ? 'ഉണ്ട്' : 'ഇല്ല',
         member.job,
